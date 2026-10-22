@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>يوزرسيف | Youzersef - منصة الطباعة الحرارية والتخصيص</title>
-  <meta name="description" content="منصة يوزرسيف الرائدة في مصر لخدمات الطباعة الحرارية وتخصيص التيشيرتات والهوديز والمجات والهدايا الدعائية. خليك مختلف .. خليك يوزرسيف." />
-  <meta property="og:title" content="يوزرسيف | Youzersef - منصة الطباعة والتخصيص" />
-  <meta property="og:description" content="كل خدماتك في مكان واحد .. جودة عالية وتصميم احترافي وتنفيذ مثالي. تيشيرتات وهوديز وهدايا دعائية في مصر." />
+  <title>يوزرسيف | Youzersef - البراند المصري الرائد للطباعة الفاخرة وتخصيص الملابس</title>
+  <meta name="description" content="منصة يوزرسيف للطباعة الحرارية والتطريز الفاخر. خامات قطن مصري 100% وتقنيات DTF كورية تدوم لسنوات. خليك مختلف .. خليك يوزرسيف." />
+  <meta property="og:title" content="يوزرسيف | Youzersef - ملابس مخصصة وهدايا فاخرة" />
+  <meta property="og:description" content="كل خدماتك في مكان واحد. خامة تعيش وطباعة مبتتقشرش. تيشيرتات، هوديز، مجات، كابات، وهدايا شركات." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/images/hero_tshirt.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Google Fonts: Cairo & Tajawal -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -24,16 +25,18 @@
           colors: {
             brand: {
               DEFAULT: '#094d45',
-              dark: '#063731',
-              light: '#0e675d',
+              dark: '#042823',
+              deep: '#031d1a',
+              light: '#0d6359',
               soft: '#f0f7f6',
-              border: '#094d4520'
+              border: '#094d4525'
             },
             gold: {
               DEFAULT: '#E0A800',
               hover: '#C49300',
+              metallic: '#D4AF37',
               light: '#FFF9E6',
-              border: '#E0A80040'
+              border: '#E0A80045'
             }
           },
           fontFamily: {
@@ -45,14 +48,45 @@
     }
   </script>
 
-  <!-- Alpine.js for seamless interactivity -->
+  <!-- Alpine.js for seamless reactive interactivity -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 
   <style>
     body {
       font-family: 'Cairo', 'Tajawal', sans-serif;
-      background-color: #F9FAFB;
-      color: #1F2937;
+      background-color: #F8FAF9;
+      color: #0F172A;
+      overflow-x: hidden;
+    }
+
+    /* Luxury Gold Glow Pulse */
+    @keyframes goldGlow {
+      0%, 100% {
+        box-shadow: 0 0 15px rgba(224, 168, 0, 0.35), 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      50% {
+        box-shadow: 0 0 25px rgba(224, 168, 0, 0.65), 0 6px 14px rgba(0, 0, 0, 0.15);
+      }
+    }
+    .glow-gold {
+      animation: goldGlow 3s ease-in-out infinite;
+    }
+
+    /* Floating subtle luxury animation */
+    @keyframes floatLuxury {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-7px) rotate(0.4deg); }
+    }
+    .float-slow {
+      animation: floatLuxury 5s ease-in-out infinite;
+    }
+
+    @keyframes floatReverse {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(6px); }
+    }
+    .float-reverse {
+      animation: floatReverse 4.5s ease-in-out infinite;
     }
 
     /* Custom Shake Animation for Validation Assistant */
@@ -62,80 +96,84 @@
       35%, 75% { transform: translateX(8px); }
     }
     .shake-error {
-      animation: fieldShake 0.45s ease-in-out;
+      animation: fieldShake 0.45s cubic-bezier(.36,.07,.19,.97) both;
     }
 
-    /* Floating subtle pulse */
-    @keyframes floatSlow {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-6px); }
-    }
-    .float-anim {
-      animation: floatSlow 4s ease-in-out infinite;
+    /* Subtle Card Shimmer */
+    .shimmer-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,250,249,0.95) 100%);
+      backdrop-filter: blur(8px);
     }
 
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 9px;
     }
     ::-webkit-scrollbar-track {
-      background: #f1f1f1;
+      background: #f1f5f4;
     }
     ::-webkit-scrollbar-thumb {
       background: #094d45;
-      border-radius: 4px;
+      border-radius: 5px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #063731;
+      background: #042823;
     }
   </style>
 </head>
-<body x-data="youzersefApp()" class="min-h-screen bg-[#F9FAFB] flex flex-col text-slate-800 antialiased selection:bg-[#E0A800] selection:text-slate-900">
+<body x-data="youzersefApp()" class="min-h-screen bg-[#F8FAF9] flex flex-col text-slate-800 antialiased selection:bg-[#E0A800] selection:text-slate-950">
 
-  <!-- Top Announcement Bar -->
-  <div class="bg-[#063731] text-emerald-100 text-xs py-2 px-4 border-b border-emerald-900/30">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+  <!-- Top Announcement Bar (Rich Luxury Emerald & Gold) -->
+  <div class="bg-gradient-to-r from-[#031d1a] via-[#094d45] to-[#042823] text-emerald-100 text-xs py-2.5 px-4 border-b border-emerald-800/40 shadow-xs relative z-40">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      
       <div class="flex items-center gap-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-[#E0A800] animate-pulse"></span>
-        <span class="font-medium">خصم خاص 15% لطلبات الشركات والكميات | شحن سريع لجميع المحافظات</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-[#E0A800] ring-4 ring-[#E0A800]/20 animate-pulse"></span>
+        <span class="font-bold text-white tracking-wide">
+          أقوى خامات القطن المصري والطباعة الحرارية المعتمدة | شحن لجميع محافظات مصر مع حق المعاينة
+        </span>
       </div>
-      <div class="flex items-center gap-4 text-xs">
-        <a href="https://wa.me/201116891025" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-1.5 transition-colors">
-          <svg class="w-3.5 h-3.5 text-[#E0A800]" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
-          </svg>
-          <span>خدمة العملاء والواتساب: 01116891025</span>
+
+      <div class="flex items-center gap-5 text-xs font-semibold">
+        <a href="https://wa.me/201116891025" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-1.5 transition-all group">
+          <div class="w-5 h-5 rounded-full bg-[#E0A800] text-slate-950 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+            </svg>
+          </div>
+          <span>خدمة العملاء والشركات: <strong class="text-white dir-ltr font-mono">01116891025</strong></span>
         </a>
-        <span class="hidden md:inline text-emerald-300/40">|</span>
-        <span class="hidden md:inline text-emerald-200">شعارنا: خليك مختلف .. خليك يوزرسيف</span>
+        <span class="hidden lg:inline text-emerald-400/40">|</span>
+        <span class="hidden lg:inline text-[#E0A800] font-black tracking-wider font-tajawal">خليك مختلف .. خليك يوزرسيف</span>
       </div>
+
     </div>
   </div>
 
   <!-- Header / Navigation Bar -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 transition-all">
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <!-- Brand Logo -->
-        <a href="#home" class="flex items-center gap-3 group focus:outline-none">
-          <div class="w-12 h-12 rounded-xl bg-[#094d45] flex items-center justify-center shadow-md overflow-hidden p-1 border border-emerald-900/10">
-            <img src="/assets/aistudio/698128525_972394995530458_2269685097312552818_n_0a7c5350.jpg" alt="شعار يوزرسيف" class="w-full h-full object-contain" />
+        <!-- Brand Logo with Arabic Calligraphy Feather Image -->
+        <a href="#home" class="flex items-center gap-3.5 group focus:outline-none">
+          <div class="w-12 h-12 shrink-0 rounded-2xl bg-[#094d45] flex items-center justify-center shadow-lg overflow-hidden p-1.5 border border-[#094d45] transition-all group-hover:scale-105 group-hover:shadow-emerald-900/20">
+            <img src="/assets/aistudio/698128525_972394995530458_2269685097312552818_n_0a7c5350.jpg" alt="لوجو يوزرسيف" class="w-full h-full object-contain" />
           </div>
           <div class="flex flex-col">
-            <span class="text-2xl font-black tracking-tight text-[#094d45] font-tajawal group-hover:text-[#063731] transition-colors">يوزرسيف</span>
-            <span class="text-[11px] text-[#E0A800] font-semibold tracking-wider">خليك مختلف .. خليك يوزرسيف</span>
+            <span class="text-2xl sm:text-3xl font-black tracking-tight text-[#094d45] font-tajawal leading-none group-hover:text-[#042823] transition-colors">يوزرسيف</span>
+            <span class="text-[11px] text-[#E0A800] font-black tracking-wider mt-1 font-tajawal">خليك مختلف .. خليك يوزرسيف</span>
           </div>
         </a>
 
         <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
+        <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-700">
           <a href="#home" class="hover:text-[#094d45] transition-colors py-2 border-b-2 border-transparent hover:border-[#094d45]">الرئيسية</a>
-          <a href="#services" class="hover:text-[#094d45] transition-colors py-2 border-b-2 border-transparent hover:border-[#094d45]">خدماتنا</a>
-          <a href="#features" class="hover:text-[#094d45] transition-colors py-2 border-b-2 border-transparent hover:border-[#094d45]">مميزاتنا</a>
+          <a href="#services" class="hover:text-[#094d45] transition-colors py-2 border-b-2 border-transparent hover:border-[#094d45]">خدماتنا ومنتجاتنا</a>
+          <a href="#craft" class="hover:text-[#094d45] transition-colors py-2 border-b-2 border-transparent hover:border-[#094d45]">سر الجودة</a>
           <a href="#portfolio" class="hover:text-[#094d45] transition-colors py-2 border-b-2 border-transparent hover:border-[#094d45]">معرض الأعمال</a>
           <a href="#tracking" class="hover:text-[#094d45] transition-colors py-2 border-b-2 border-transparent hover:border-[#094d45] flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-[#094d45]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 text-[#094d45]" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
             </svg>
             <span>تتبع طلبك</span>
@@ -145,21 +183,21 @@
 
         <!-- CTA & Actions -->
         <div class="hidden sm:flex items-center gap-3">
-          <button @click="openCustomizer('tshirts')" class="bg-[#094d45] hover:bg-[#063731] text-white px-5 py-2.5 rounded-lg text-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-2 group">
-            <svg class="w-4 h-4 text-[#E0A800] transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <button @click="openCustomizer('tshirts')" class="bg-[#094d45] hover:bg-[#042823] text-white px-5 py-2.5 rounded-xl text-sm font-black shadow-md hover:shadow-xl transition-all flex items-center gap-2 group cursor-pointer border border-emerald-700/30">
+            <svg class="w-4 h-4 text-[#E0A800] transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
-            <span>ابدأ التخصيص</span>
+            <span>ابدأ التخصيص الآن</span>
           </button>
         </div>
 
         <!-- Mobile Menu Toggle Button -->
         <div class="flex items-center gap-2 md:hidden">
-          <button @click="mobileMenuOpen = !mobileMenuOpen" aria-label="قائمة التصفح" class="p-2.5 text-slate-700 hover:text-[#094d45] hover:bg-slate-100 rounded-lg focus:outline-none transition-colors">
-            <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <button @click="mobileMenuOpen = !mobileMenuOpen" aria-label="قائمة التصفح" class="p-2.5 text-slate-700 hover:text-[#094d45] hover:bg-slate-100 rounded-xl focus:outline-none transition-colors">
+            <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <svg x-show="mobileMenuOpen" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <svg x-show="mobileMenuOpen" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -169,170 +207,204 @@
     </div>
 
     <!-- Mobile Drawer Navigation -->
-    <div x-show="mobileMenuOpen" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-4" class="md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 shadow-xl space-y-3">
-      <a @click="mobileMenuOpen = false" href="#home" class="block py-2 text-base font-semibold text-slate-800 hover:text-[#094d45]">الرئيسية</a>
-      <a @click="mobileMenuOpen = false" href="#services" class="block py-2 text-base font-semibold text-slate-800 hover:text-[#094d45]">خدماتنا المتاحة</a>
-      <a @click="mobileMenuOpen = false" href="#features" class="block py-2 text-base font-semibold text-slate-800 hover:text-[#094d45]">مميزات يوزرسيف</a>
-      <a @click="mobileMenuOpen = false" href="#portfolio" class="block py-2 text-base font-semibold text-slate-800 hover:text-[#094d45]">معرض سوابق الأعمال</a>
-      <a @click="mobileMenuOpen = false" href="#tracking" class="block py-2 text-base font-semibold text-slate-800 hover:text-[#094d45]">تتبع طلبك برقم الشحنة</a>
-      <a @click="mobileMenuOpen = false" href="#contact" class="block py-2 text-base font-semibold text-slate-800 hover:text-[#094d45]">تواصل وخدمة العملاء</a>
+    <div x-show="mobileMenuOpen" x-cloak x-transition class="md:hidden bg-white border-b border-slate-200 px-5 pt-4 pb-6 shadow-2xl space-y-3">
+      <a @click="mobileMenuOpen = false" href="#home" class="block py-2 text-base font-bold text-slate-900 hover:text-[#094d45]">الرئيسية</a>
+      <a @click="mobileMenuOpen = false" href="#services" class="block py-2 text-base font-bold text-slate-900 hover:text-[#094d45]">خدماتنا ومنتجاتنا</a>
+      <a @click="mobileMenuOpen = false" href="#craft" class="block py-2 text-base font-bold text-slate-900 hover:text-[#094d45]">سر الجودة والخامات</a>
+      <a @click="mobileMenuOpen = false" href="#portfolio" class="block py-2 text-base font-bold text-slate-900 hover:text-[#094d45]">معرض سوابق الأعمال</a>
+      <a @click="mobileMenuOpen = false" href="#tracking" class="block py-2 text-base font-bold text-slate-900 hover:text-[#094d45]">تتبع طلبك برقم الشحنة</a>
+      <a @click="mobileMenuOpen = false" href="#contact" class="block py-2 text-base font-bold text-slate-900 hover:text-[#094d45]">تواصل وخدمة العملاء</a>
       <div class="pt-3 border-t border-slate-100">
-        <button @click="openCustomizer('tshirts'); mobileMenuOpen = false" class="w-full bg-[#094d45] hover:bg-[#063731] text-white py-3 rounded-lg font-bold shadow text-center flex items-center justify-center gap-2">
-          <span>ابدأ التخصيص والطلب الآن</span>
+        <button @click="openCustomizer('tshirts'); mobileMenuOpen = false" class="w-full bg-[#094d45] hover:bg-[#042823] text-white py-3.5 rounded-xl font-black shadow-lg text-center flex items-center justify-center gap-2">
+          <span>ابدأ التخصيص الفوري</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="relative overflow-hidden bg-gradient-to-b from-white via-[#094d45]/5 to-[#F9FAFB] pt-8 pb-16 lg:py-20 border-b border-slate-200/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+  <!-- ======================================================== -->
+  <!-- HERO SECTION WITH REAL COMMERCIAL APPAREL PHOTOGRAPHY -->
+  <!-- ======================================================== -->
+  <section id="home" class="relative overflow-hidden bg-gradient-to-b from-white via-[#094d45]/5 to-[#F8FAF9] pt-10 pb-20 lg:py-24 border-b border-slate-200/80">
+    
+    <!-- Background atmospheric glow -->
+    <div class="absolute -top-32 right-1/4 w-96 h-96 bg-[#094d45]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -left-20 w-80 h-80 bg-[#E0A800]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         
-        <!-- Hero Text & CTA -->
+        <!-- Hero Text & Copywriting -->
         <div class="lg:col-span-7 space-y-6 text-right">
           
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#094d45]/10 border border-[#094d45]/20 text-[#094d45] text-xs sm:text-sm font-bold">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#E0A800]"></span>
-            <span>جاهزون لتلقي الاوردرات | طباعة ديجيتال DTF وحراري احترافي</span>
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white shadow-xs border border-emerald-900/10 text-[#094d45] text-xs sm:text-sm font-bold">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#E0A800] ring-4 ring-[#E0A800]/20 animate-pulse"></span>
+            <span>جاهزون لتلقي الاوردرات الفردية وطلبيات الشركات بالجملة</span>
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.25]">
-            <span class="text-[#094d45]">كل خدماتك</span> في مكان واحد
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.25]">
+            <span class="text-[#094d45] relative inline-block">
+              كل خدماتك
+              <svg class="absolute -bottom-1.5 left-0 w-full h-3 text-[#E0A800]/60 -z-10" viewBox="0 0 100 20" preserveAspectRatio="none">
+                <path d="M0,15 Q50,0 100,15" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+            </span> في مكان واحد
           </h1>
 
-          <p class="text-lg sm:text-xl font-bold text-[#E0A800]">
-            خليك مختلف .. خليك يوزرسيف
-          </p>
-
-          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-medium">
-            منصة الطباعة المخصصة الرائدة في مصر. صمم تيشيرتك، هوديك، أو مجك بأعلى جودة وخامات مصرية 100% مع ألوان زاهية تدوم طويلاً، وتقنيات تحاكي المعايير العالمية.
-          </p>
-
-          <!-- Highlights Chips -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-            <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-xs flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-lg bg-emerald-50 text-[#094d45] flex items-center justify-center shrink-0">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-              </div>
-              <span class="text-xs font-bold text-slate-800">قطن مصري 100%</span>
-            </div>
-            <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-xs flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-lg bg-amber-50 text-[#E0A800] flex items-center justify-center shrink-0">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                </svg>
-              </div>
-              <span class="text-xs font-bold text-slate-800">شحن سريع 48 ساعة</span>
-            </div>
-            <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-xs flex items-center gap-2.5 col-span-2 sm:col-span-1">
-              <div class="w-8 h-8 rounded-lg bg-teal-50 text-[#094d45] flex items-center justify-center shrink-0">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-                </svg>
-              </div>
-              <span class="text-xs font-bold text-slate-800">ألوان ثابتة للغسيل</span>
-            </div>
+          <div class="flex items-center gap-3">
+            <div class="h-0.5 w-10 bg-[#E0A800]"></div>
+            <p class="text-xl sm:text-2xl font-black text-[#E0A800] font-tajawal">
+              خليك مختلف .. خليك يوزرسيف
+            </p>
           </div>
 
-          <!-- Hero Action Buttons -->
+          <p class="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl font-semibold">
+            مش مجرد طباعة عادية .. بنقدملك خامات قطن مصري 100% فاخرة معالجة ضد الانكماش، مع طباعة حرارية DTF كورية مستوردة مبتتقشرش ومبتتأثرش بالغسيل المتكرر. صمم قطعتك الفريدة أو جهز زي شركتك بأعلى تشطيب.
+          </p>
+
+          <!-- Real Value Propositions / Selling Points -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5 pt-2">
+            
+            <div class="bg-white/90 backdrop-blur-xs p-3.5 rounded-2xl border border-slate-200/90 shadow-xs hover:border-[#094d45]/40 transition-all">
+              <div class="flex items-center gap-2 text-slate-900 font-extrabold text-xs mb-1">
+                <svg class="w-4 h-4 text-[#094d45]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>خامات تعيش سنين</span>
+              </div>
+              <p class="text-[11px] text-slate-500 font-medium">سنجل جيرسي وميلتون محمل</p>
+            </div>
+
+            <div class="bg-white/90 backdrop-blur-xs p-3.5 rounded-2xl border border-slate-200/90 shadow-xs hover:border-[#094d45]/40 transition-all">
+              <div class="flex items-center gap-2 text-slate-900 font-extrabold text-xs mb-1">
+                <svg class="w-4 h-4 text-[#E0A800]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span>شحن سريع خلال 48 ساعة</span>
+              </div>
+              <p class="text-[11px] text-slate-500 font-medium">لكل محافظات مصر حتى باب بيتك</p>
+            </div>
+
+            <div class="bg-white/90 backdrop-blur-xs p-3.5 rounded-2xl border border-slate-200/90 shadow-xs hover:border-[#094d45]/40 transition-all col-span-2 sm:col-span-1">
+              <div class="flex items-center gap-2 text-slate-900 font-extrabold text-xs mb-1">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span>حق المعاينة أولاً</span>
+              </div>
+              <p class="text-[11px] text-slate-500 font-medium">عاين جودة الطباعة قبل الدفع</p>
+            </div>
+
+          </div>
+
+          <!-- Hero Action CTAs -->
           <div class="flex flex-wrap items-center gap-4 pt-4">
-            <button @click="openCustomizer('tshirts')" class="bg-[#E0A800] hover:bg-[#C49300] text-slate-950 font-bold px-7 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all text-base flex items-center gap-2.5">
-              <svg class="w-5 h-5 text-slate-950" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            
+            <button @click="openCustomizer('tshirts')" class="bg-[#E0A800] hover:bg-[#C49300] text-slate-950 font-black px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all text-base flex items-center gap-3 cursor-pointer glow-gold">
+              <svg class="w-5 h-5 text-slate-950" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
               </svg>
-              <span>اطلب تصميمك الآن</span>
+              <span>اطلب تصميمك المخصص الآن</span>
             </button>
 
-            <a href="#portfolio" class="bg-white hover:bg-slate-50 text-[#094d45] border-2 border-[#094d45] font-bold px-6 py-3.5 rounded-xl shadow-sm hover:shadow transition-all text-base flex items-center gap-2">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-              </svg>
-              <span>معرض سوابق الأعمال</span>
-            </a>
-
-            <a href="#tracking" class="text-slate-600 hover:text-[#094d45] font-bold text-sm px-3 py-2 flex items-center gap-1.5 transition-colors">
-              <span>تتبع طلب سابق</span>
-              <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <a href="#services" class="bg-white hover:bg-slate-50 text-[#094d45] border-2 border-[#094d45] font-black px-6 py-4 rounded-xl shadow-xs hover:shadow transition-all text-base flex items-center gap-2">
+              <span>تصفح الأقسام والخامات</span>
+              <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
               </svg>
             </a>
+
+          </div>
+
+          <!-- Trust Proof -->
+          <div class="flex items-center gap-4 pt-3 border-t border-slate-200/80 text-xs font-bold text-slate-600">
+            <div class="flex -space-x-2 space-x-reverse">
+              <div class="w-8 h-8 rounded-full bg-[#094d45] text-white flex items-center justify-center font-mono text-[10px] border-2 border-white font-bold">4.9</div>
+              <div class="w-8 h-8 rounded-full bg-[#E0A800] text-slate-950 flex items-center justify-center font-mono text-[10px] border-2 border-white font-bold">DTF</div>
+              <div class="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center font-mono text-[10px] border-2 border-white font-bold">100%</div>
+            </div>
+            <span>أكثر من <strong class="text-slate-900 font-extrabold">+4,500 عميل وشركة</strong> في مصر وثقوا في طباعة يوزرسيف</span>
           </div>
 
         </div>
 
-        <!-- Hero Interactive Visual / Lightweight Product Animation -->
+        <!-- Hero Showcase: REAL STUDIO PRODUCT PHOTOGRAPHY WITH REALISTIC INTERACTION -->
         <div class="lg:col-span-5 relative">
           
-          <!-- Background glow and decoration -->
-          <div class="absolute -inset-4 bg-gradient-to-tr from-[#094d45]/20 to-[#E0A800]/20 rounded-3xl blur-2xl opacity-60"></div>
+          <!-- Subtle Luxury Floating Badge 1 -->
+          <div class="absolute -top-5 -right-4 z-20 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-slate-200 float-slow flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#094d45] text-[#E0A800] flex items-center justify-center shrink-0 shadow-xs">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs font-black text-slate-900 block font-tajawal">قطن مصري أصيل 100%</span>
+              <span class="text-[11px] text-emerald-700 font-bold">معالج ضد الوبرة والانكماش</span>
+            </div>
+          </div>
 
-          <div class="relative bg-white rounded-2xl p-6 shadow-xl border border-slate-200/90 text-center space-y-5">
+          <!-- Subtle Luxury Floating Badge 2 -->
+          <div class="absolute -bottom-5 -left-4 z-20 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-slate-200 float-reverse flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#E0A800] text-slate-950 flex items-center justify-center shrink-0 shadow-xs">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs font-black text-slate-900 block font-tajawal">ضمان ثبات الطباعة</span>
+              <span class="text-[11px] text-slate-500 font-bold">تتحمل 100+ غسلة أوتوماتيك</span>
+            </div>
+          </div>
+
+          <!-- The Real Showcase Frame -->
+          <div class="relative bg-white rounded-3xl p-5 shadow-2xl border border-slate-200/90 text-center space-y-4 overflow-hidden group">
             
-            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3 text-xs font-bold">
               <div class="flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
-                <span class="text-xs font-bold text-slate-700">معاينة تفاعلية فورية</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                <span class="text-slate-800">تصوير استوديو واقعي 100%</span>
               </div>
-              <span class="text-[11px] font-semibold text-[#094d45] bg-[#094d45]/10 px-2.5 py-1 rounded-full">استوديو التصميم</span>
+              <span class="text-[11px] font-black text-[#094d45] bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
+                أوفر سايز يوزرسيف الفاخر
+              </span>
             </div>
 
-            <!-- Interactive Mockup Canvas/SVG -->
-            <div class="relative mx-auto w-64 h-64 sm:w-72 sm:h-72 rounded-xl bg-slate-50 flex items-center justify-center p-4 border border-dashed border-slate-200 transition-colors" :style="'background-color:' + heroColor.bg">
+            <!-- Real Photograph of Oversized T-Shirt with Authentic Brand Imprint Overlay -->
+            <div class="relative w-full aspect-square rounded-2xl overflow-hidden bg-slate-100 shadow-inner border border-slate-200/80">
               
-              <!-- T-Shirt Vector Mockup -->
-              <svg class="w-full h-full drop-shadow-md transition-all duration-300" viewBox="0 0 240 240" fill="none">
-                <!-- Shirt Base Body -->
-                <path d="M70,30 L95,50 C105,55 135,55 145,50 L170,30 L220,70 L195,100 L175,85 L175,215 C175,220 170,225 165,225 L75,225 C70,225 65,220 65,215 L65,85 L45,100 L20,70 L70,30 Z" :fill="heroColor.value" stroke="#334155" stroke-width="2.5" stroke-linejoin="round"/>
-                <!-- Collar Detail -->
-                <path d="M95,50 C105,65 135,65 145,50" fill="none" stroke="#334155" stroke-width="2.5"/>
-                <!-- Chest Imprint Area Overlay -->
-                <rect x="90" y="85" width="60" height="70" rx="4" fill="none" stroke="#94A3B8" stroke-dasharray="3 3" stroke-width="1.2"/>
-              </svg>
+              <!-- Real High-Res Studio Photo of T-Shirt -->
+              <img :src="heroActivePhoto" alt="تيشيرت أوفر سايز يوزرسيف الحقيقي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
 
-              <!-- Dynamic Printed Logo or Custom Text Over Mockup -->
-              <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none mt-2">
-                <div class="w-16 h-16 rounded-full bg-white/90 shadow-sm p-1.5 flex items-center justify-center border border-slate-200 float-anim">
-                  <img src="/assets/aistudio/698128525_972394995530458_2269685097312552818_n_0a7c5350.jpg" alt="لوجو مطبوع" class="w-full h-full object-contain rounded-full" />
+              <!-- Realistic Imprint Overlay on the Real T-shirt Chest -->
+              <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none -mt-4">
+                <div class="w-24 h-24 rounded-full bg-[#094d45]/90 p-2 shadow-2xl flex items-center justify-center border-2 border-[#E0A800]/80 backdrop-blur-xs transition-all duration-300">
+                  <img src="/assets/aistudio/698128525_972394995530458_2269685097312552818_n_0a7c5350.jpg" alt="لوجو يوزرسيف المطبوع" class="w-full h-full object-contain rounded-full" />
                 </div>
-                <span class="text-[10px] font-black mt-1 px-2 py-0.5 rounded shadow-xs" :class="heroColor.isDark ? 'bg-white text-slate-900' : 'bg-[#094d45] text-white'">
-                  يوزرسيف 2026
-                </span>
+                <div class="bg-slate-950/85 text-[#E0A800] text-[11px] font-black px-3 py-1 rounded-md mt-2 shadow-lg backdrop-blur-xs font-tajawal tracking-wider border border-[#E0A800]/40">
+                  خليك مختلف .. خليك يوزرسيف
+                </div>
               </div>
 
-              <!-- Floating Quality Tag -->
-              <div class="absolute bottom-3 right-3 bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-md text-[11px] font-bold text-[#094d45] shadow-xs border border-slate-100 flex items-center gap-1">
+              <!-- Live Tag on Photo -->
+              <div class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-lg flex items-center gap-1.5 shadow">
                 <svg class="w-3.5 h-3.5 text-[#E0A800]" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
-                <span>طباعة DTF أصلية</span>
+                <span>الخامة الأصلية 100% قطن</span>
               </div>
             </div>
 
-            <!-- Color Switcher Buttons (Interactive Demo) -->
-            <div class="space-y-2">
-              <span class="text-xs font-semibold text-slate-500 block">اختر لون التيشيرت لتجربة المعاينة الفورية:</span>
-              <div class="flex items-center justify-center gap-3">
-                <template x-for="c in heroColors" :key="c.name">
-                  <button @click="heroColor = c" :class="heroColor.name === c.name ? 'ring-2 ring-offset-2 ring-[#094d45] scale-110' : 'hover:scale-105'" class="w-8 h-8 rounded-full border border-slate-300 shadow-sm transition-transform cursor-pointer relative" :style="'background-color:' + c.value" :title="c.name">
-                    <span x-show="heroColor.name === c.name" class="absolute inset-0 flex items-center justify-center">
-                      <svg class="w-4 h-4" :class="c.isDark ? 'text-white' : 'text-slate-900'" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </span>
-                  </button>
-                </template>
+            <!-- Model & Product Quick Selector -->
+            <div class="pt-1 flex items-center justify-between text-xs">
+              <div class="text-right">
+                <span class="text-slate-400 block text-[11px]">الموديل المعروض:</span>
+                <strong class="text-slate-900 font-black">أوفر سايز زيتي ملكي (Heavyweight)</strong>
               </div>
-              <span class="text-xs font-bold text-[#094d45]" x-text="'اللون المحدد: ' + heroColor.name"></span>
-            </div>
-
-            <div class="pt-2">
-              <button @click="openCustomizer('tshirts')" class="w-full bg-[#094d45] hover:bg-[#063731] text-white py-2.5 rounded-lg text-sm font-bold shadow transition-colors flex items-center justify-center gap-2">
-                <span>تخصيص هذا المنتج بالتفصيل</span>
-                <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              <button @click="openCustomizer('tshirts')" class="bg-[#094d45] hover:bg-[#042823] text-white px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-xs flex items-center gap-1">
+                <span>تخصيص هذا الموديل</span>
+                <svg class="w-3 h-3 rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                 </svg>
               </button>
             </div>
@@ -345,66 +417,69 @@
     </div>
   </section>
 
-  <!-- Trust Badges Section (From Real Marketing Flyer) -->
-  <section id="features" class="py-12 bg-white border-b border-slate-200">
+  <!-- ======================================================== -->
+  <!-- TRUST BADGES (FOUR CORNERSTONES FROM REAL FLYER) -->
+  <!-- ======================================================== -->
+  <section id="craft" class="py-14 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <h2 class="text-xs font-bold text-[#E0A800] uppercase tracking-wider mb-1">لماذا يوزرسيف؟</h2>
-        <p class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-tajawal">جودة عالية .. تصميم احترافي .. تنفيذ مثالي</p>
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-black text-[#E0A800] uppercase tracking-widest font-tajawal">لماذا يختار عملاؤنا يوزرسيف؟</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-950 font-tajawal mt-1">جودة عالية .. تصميم احترافي .. تنفيذ مثالي</h2>
+        <p class="text-sm text-slate-600 mt-2 font-medium">المعايير الصارمة التي نطبقها في كل قطعة تخرج من خطوط إنتاجنا</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Badge 1: أعلى جودة -->
-        <div class="p-6 rounded-2xl bg-[#F9FAFB] border border-slate-200/80 hover:border-[#094d45]/40 hover:shadow-md transition-all text-center space-y-3 group">
-          <div class="w-14 h-14 mx-auto rounded-xl bg-[#094d45]/10 text-[#094d45] flex items-center justify-center group-hover:bg-[#094d45] group-hover:text-white transition-colors">
+        <!-- Badge 1: أعلى جودة وأفضل خامات -->
+        <div class="p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 hover:border-[#094d45] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center space-y-3 group">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-[#094d45]/10 text-[#094d45] flex items-center justify-center group-hover:bg-[#094d45] group-hover:text-white transition-all duration-300 shadow-xs">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
             </svg>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 font-tajawal">أعلى جودة وأفضل خامات</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            نختار أفضل خامات القطن المصري والميلتون والأكواب السيراميك المقاومة للحرارة بأعلى معايير المتانة.
+          <h3 class="text-lg font-black text-slate-900 font-tajawal">أعلى جودة وأفضل خامات</h3>
+          <p class="text-xs text-slate-600 leading-relaxed font-semibold">
+            خامات قطنية مصرية منتقاة بعناية 100% مع تشطيب دقيق وميلتون شتوي فاخر لا يتكتل ولا يتغير ملمسه.
           </p>
         </div>
 
         <!-- Badge 2: تصميم احترافي -->
-        <div class="p-6 rounded-2xl bg-[#F9FAFB] border border-slate-200/80 hover:border-[#094d45]/40 hover:shadow-md transition-all text-center space-y-3 group">
-          <div class="w-14 h-14 mx-auto rounded-xl bg-amber-50 text-[#E0A800] flex items-center justify-center group-hover:bg-[#E0A800] group-hover:text-slate-950 transition-colors">
+        <div class="p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 hover:border-[#E0A800] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center space-y-3 group">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-50 text-[#E0A800] flex items-center justify-center group-hover:bg-[#E0A800] group-hover:text-slate-950 transition-all duration-300 shadow-xs">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
             </svg>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 font-tajawal">تصميم احترافي دقيق</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            فريق متخصص لمراجعة تناسق الأبعاد وجودة وضوح الصورة وتجهيز ملفات الطباعة قبل بدء التنفيذ مجاناً.
+          <h3 class="text-lg font-black text-slate-900 font-tajawal">تصميم احترافي دقيق</h3>
+          <p class="text-xs text-slate-600 leading-relaxed font-semibold">
+            فريق جرافيك محترف يراجع دقة ملفك ويقوم بضبط الأبعاد والألوان والتأكد من مطابقتها قبل بدء الطباعة مجاناً.
           </p>
         </div>
 
-        <!-- Badge 3: سرعة في التنفيذ -->
-        <div class="p-6 rounded-2xl bg-[#F9FAFB] border border-slate-200/80 hover:border-[#094d45]/40 hover:shadow-md transition-all text-center space-y-3 group">
-          <div class="w-14 h-14 mx-auto rounded-xl bg-teal-50 text-[#094d45] flex items-center justify-center group-hover:bg-[#094d45] group-hover:text-white transition-colors">
+        <!-- Badge 3: سرعة في التنفيذ والتسليم -->
+        <div class="p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 hover:border-[#094d45] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center space-y-3 group">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-teal-50 text-[#094d45] flex items-center justify-center group-hover:bg-[#094d45] group-hover:text-white transition-all duration-300 shadow-xs">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 font-tajawal">سرعة في التنفيذ والتسليم</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            ورش مجهزة بآلات حديثة تضمن لك استلام طلبك الفردي أو طلبيات الجملة والشركات في وقت قياسي.
+          <h3 class="text-lg font-black text-slate-900 font-tajawal">سرعة في التنفيذ والتسليم</h3>
+          <p class="text-xs text-slate-600 leading-relaxed font-semibold">
+            خطوط إنتاج مزودة بمكابس هيدروليكية رقمية تنجز الطلبيات الفردية وكميات الشركات في وقت قياسي خلال 48 ساعة.
           </p>
         </div>
 
         <!-- Badge 4: رضاكم هدفنا -->
-        <div class="p-6 rounded-2xl bg-[#F9FAFB] border border-slate-200/80 hover:border-[#094d45]/40 hover:shadow-md transition-all text-center space-y-3 group">
-          <div class="w-14 h-14 mx-auto rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+        <div class="p-6 rounded-2xl bg-[#F8FAF9] border border-slate-200/90 hover:border-emerald-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center space-y-3 group">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-xs">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
             </svg>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 font-tajawal">رضاكم هو هدفنا الأول</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            دعم ومتابعة مستمرة عبر الواتساب قبل وبعد الاستلام لضمان مطابقة المنتج لتوقعاتك بنسبة 100%.
+          <h3 class="text-lg font-black text-slate-900 font-tajawal">رضاكم هو هدفنا الأول</h3>
+          <p class="text-xs text-slate-600 leading-relaxed font-semibold">
+            نحن واثقون من منتجاتنا: عاين طلبك بنفسك مع المندوب قبل دفع أي جنيه، مع ضمان استبدال فوري لأي ملاحظة.
           </p>
         </div>
 
@@ -413,68 +488,69 @@
     </div>
   </section>
 
-  <!-- Services / Categories Grid -->
-  <section id="services" class="py-16 bg-[#F9FAFB]">
+  <!-- ======================================================== -->
+  <!-- REAL SERVICES & PRODUCT CATEGORIES WITH STUDIO PHOTOGRAPHY -->
+  <!-- ======================================================== -->
+  <section id="services" class="py-16 bg-[#F8FAF9]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
         <div>
-          <span class="text-xs font-bold text-[#E0A800] uppercase tracking-wider">تشكيلة خدماتنا الكاملة</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-tajawal mt-1">اختر خدمتك وابدأ التخصيص</h2>
-          <p class="text-sm text-slate-600 mt-2 font-medium">كل ما تحتاجه للطباعة الشخصية والهدايا ومستلزمات الشركات والمؤسسات</p>
+          <span class="text-xs font-black text-[#E0A800] uppercase tracking-wider font-tajawal">تشكيلة يوزرسيف المعتمدة</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-950 font-tajawal mt-1">منتجات الطباعة والتخصيص</h2>
+          <p class="text-sm text-slate-600 mt-2 font-semibold">اختر الفئة وشاهد المواصفات الواقعية وابدأ طلبك بضغطة زر</p>
         </div>
-        <div class="text-xs font-semibold text-slate-500 bg-white px-4 py-2 rounded-lg border border-slate-200">
-          معاينة حية وتفصيل فوري لجميع الألوان والمقاسات
+        <div class="text-xs font-black text-slate-700 bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-xs flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>تصوير حقيقي لخامات الورشة والمصنع</span>
         </div>
       </div>
 
-      <!-- Categories Grid (8 Services Matching Brochure) -->
+      <!-- Categories Grid (Real Studio Photography) -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <template x-for="item in services" :key="item.id">
-          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between group">
+          <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
             
-            <!-- Card Top Image / Visual Representation -->
-            <div class="relative bg-slate-100 h-48 flex items-center justify-center p-6 overflow-hidden">
+            <!-- Real Photograph of Product -->
+            <div class="relative h-56 overflow-hidden bg-slate-100">
+              <img :src="item.image" :alt="item.title" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" />
+              
+              <!-- Badge -->
               <div class="absolute top-3 right-3 z-10">
-                <span class="bg-[#094d45] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow-xs" x-text="item.badge"></span>
+                <span class="bg-[#094d45] text-white text-[11px] font-black px-3 py-1 rounded-lg shadow-md font-tajawal" x-text="item.badge"></span>
               </div>
 
-              <!-- Product Graphic with subtle animation -->
-              <div class="w-32 h-32 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                <div class="w-24 h-24 rounded-2xl bg-white shadow-md border border-slate-200/80 flex items-center justify-center text-[#094d45] p-3">
-                  <div x-html="item.iconSvg"></div>
-                </div>
+              <!-- Gradient overlay at bottom of photo -->
+              <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
+                <span class="text-white text-xs font-black" x-text="item.material"></span>
               </div>
-
-              <!-- Subtle watermark -->
-              <span class="absolute bottom-2 left-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest font-mono">YOUZERSEF</span>
             </div>
 
-            <!-- Card Body Content -->
+            <!-- Card Content -->
             <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
               <div>
-                <h3 class="text-lg font-bold text-slate-900 font-tajawal group-hover:text-[#094d45] transition-colors" x-text="item.title"></h3>
-                <p class="text-xs text-slate-500 font-medium mt-1.5 leading-relaxed" x-text="item.description"></p>
+                <h3 class="text-lg font-black text-slate-900 font-tajawal group-hover:text-[#094d45] transition-colors" x-text="item.title"></h3>
+                <p class="text-xs text-slate-600 font-semibold mt-1.5 leading-relaxed" x-text="item.description"></p>
                 
                 <!-- Quick Specs Tags -->
                 <div class="flex flex-wrap gap-1.5 mt-3">
                   <template x-for="tag in item.tags" :key="tag">
-                    <span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-semibold" x-text="tag"></span>
+                    <span class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-bold" x-text="tag"></span>
                   </template>
                 </div>
               </div>
 
-              <!-- Price & Action Button -->
+              <!-- Price & CTA Button -->
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
                 <div>
-                  <span class="text-[11px] text-slate-400 block font-medium">السعر يبدأ من</span>
-                  <span class="text-sm font-bold text-[#094d45]" x-text="item.startingPrice + ' ج.م'"></span>
+                  <span class="text-[11px] text-slate-400 block font-semibold">السعر يبدأ من</span>
+                  <span class="text-base font-black text-[#094d45]" x-text="item.startingPrice + ' ج.م'"></span>
                 </div>
 
-                <button @click="openCustomizer(item.id)" class="bg-[#094d45] hover:bg-[#063731] text-white text-xs font-bold px-4 py-2.5 rounded-lg shadow-xs hover:shadow transition-all flex items-center gap-1.5 cursor-pointer">
+                <button @click="openCustomizer(item.id)" class="bg-[#094d45] hover:bg-[#042823] text-white text-xs font-black px-4 py-2.5 rounded-xl shadow-xs hover:shadow-md transition-all flex items-center gap-1.5 cursor-pointer">
                   <span>تخصيص وطلب</span>
-                  <svg class="w-3.5 h-3.5 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <svg class="w-3.5 h-3.5 rotate-180 text-[#E0A800]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
@@ -490,109 +566,69 @@
     </div>
   </section>
 
-  <!-- How It Works (4 Simple Steps) -->
-  <section class="py-14 bg-white border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-xl mx-auto mb-12">
-        <span class="text-xs font-bold text-[#E0A800] uppercase tracking-wider">خطوات الطلب البسيطة</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-tajawal mt-1">كيف تتم عملية الطباعة والتوصيل؟</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-        
-        <div class="bg-[#F9FAFB] p-5 rounded-xl border border-slate-200 text-center space-y-3 relative">
-          <div class="w-10 h-10 mx-auto rounded-full bg-[#094d45] text-white font-bold flex items-center justify-center text-sm shadow">1</div>
-          <h3 class="font-bold text-slate-900 font-tajawal text-base">اختر منتجك ومواصفاته</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">حدد النوع، المقاس المناسب، واللون المفضل لديك من بين خياراتنا الواسعة.</p>
-        </div>
-
-        <div class="bg-[#F9FAFB] p-5 rounded-xl border border-slate-200 text-center space-y-3 relative">
-          <div class="w-10 h-10 mx-auto rounded-full bg-[#E0A800] text-slate-950 font-bold flex items-center justify-center text-sm shadow">2</div>
-          <h3 class="font-bold text-slate-900 font-tajawal text-base">ارفع التصميم أو النص</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">ارفع صورتك أو اكتب العبارة التي تريد طباعتها على الصدر أو الظهر أو المج.</p>
-        </div>
-
-        <div class="bg-[#F9FAFB] p-5 rounded-xl border border-slate-200 text-center space-y-3 relative">
-          <div class="w-10 h-10 mx-auto rounded-full bg-[#094d45] text-white font-bold flex items-center justify-center text-sm shadow">3</div>
-          <h3 class="font-bold text-slate-900 font-tajawal text-base">تنفيذ وفحص الجودة</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">نطبع باستخدام أحدث تقنيات الطباعة الحرارية ونفحص المنتج بعناية فائقة.</p>
-        </div>
-
-        <div class="bg-[#F9FAFB] p-5 rounded-xl border border-slate-200 text-center space-y-3 relative">
-          <div class="w-10 h-10 mx-auto rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm shadow">4</div>
-          <h3 class="font-bold text-slate-900 font-tajawal text-base">توصيل لباب بيتك</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">شحن سريع مع إمكانية المعاينة قبل الاستلام والدفع بكل راحة وأمان.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Portfolio Section (معرض الأعمال) -->
-  <section id="portfolio" class="py-16 bg-[#F9FAFB]">
+  <!-- ======================================================== -->
+  <!-- PORTFOLIO / REAL CLIENT SHOWCASE WITH AUTHENTIC SAMPLES -->
+  <!-- ======================================================== -->
+  <section id="portfolio" class="py-16 bg-white border-y border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-10">
-        <span class="text-xs font-bold text-[#E0A800] uppercase tracking-wider">سوابق أعمالنا الواقعية</span>
-        <h2 class="text-3xl font-extrabold text-slate-900 font-tajawal mt-1">معرض أعمال يوزرسيف</h2>
-        <p class="text-sm text-slate-600 mt-2 font-medium">نماذج وتطبيقات حقيقية تم تنفيذها لعملائنا وشركات مرموقة في مصر</p>
+        <span class="text-xs font-black text-[#E0A800] uppercase tracking-widest font-tajawal">سوابق أعمال حقيقية</span>
+        <h2 class="text-3xl font-black text-slate-950 font-tajawal mt-1">معرض أعمال يوزرسيف الواقعي</h2>
+        <p class="text-sm text-slate-600 mt-2 font-semibold">نماذج تم تسليمها لعملائنا في القاهرة والإسكندرية وباقي المحافظات</p>
       </div>
 
-      <!-- Portfolio Filter Tabs -->
-      <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
-        <button @click="portfolioFilter = 'all'" :class="portfolioFilter === 'all' ? 'bg-[#094d45] text-white' : 'bg-white text-slate-700 hover:bg-slate-100'" class="px-4 py-2 rounded-lg text-xs font-bold shadow-xs transition-colors">
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+        <button @click="portfolioFilter = 'all'" :class="portfolioFilter === 'all' ? 'bg-[#094d45] text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'" class="px-5 py-2.5 rounded-xl text-xs font-black transition-all cursor-pointer">
           جميع الأعمال
         </button>
-        <button @click="portfolioFilter = 'wearable'" :class="portfolioFilter === 'wearable' ? 'bg-[#094d45] text-white' : 'bg-white text-slate-700 hover:bg-slate-100'" class="px-4 py-2 rounded-lg text-xs font-bold shadow-xs transition-colors">
+        <button @click="portfolioFilter = 'wearable'" :class="portfolioFilter === 'wearable' ? 'bg-[#094d45] text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'" class="px-5 py-2.5 rounded-xl text-xs font-black transition-all cursor-pointer">
           تيشيرتات وهوديز
         </button>
-        <button @click="portfolioFilter = 'promotional'" :class="portfolioFilter === 'promotional' ? 'bg-[#094d45] text-white' : 'bg-white text-slate-700 hover:bg-slate-100'" class="px-4 py-2 rounded-lg text-xs font-bold shadow-xs transition-colors">
-          هدايا ومجات شركات
+        <button @click="portfolioFilter = 'promotional'" :class="portfolioFilter === 'promotional' ? 'bg-[#094d45] text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'" class="px-5 py-2.5 rounded-xl text-xs font-black transition-all cursor-pointer">
+          مجات ومطرات شركات
         </button>
-        <button @click="portfolioFilter = 'accessories'" :class="portfolioFilter === 'accessories' ? 'bg-[#094d45] text-white' : 'bg-white text-slate-700 hover:bg-slate-100'" class="px-4 py-2 rounded-lg text-xs font-bold shadow-xs transition-colors">
+        <button @click="portfolioFilter = 'accessories'" :class="portfolioFilter === 'accessories' ? 'bg-[#094d45] text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'" class="px-5 py-2.5 rounded-xl text-xs font-black transition-all cursor-pointer">
           كابات واستيكرات
         </button>
       </div>
 
-      <!-- Portfolio Gallery Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Real Photography Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <template x-for="item in filteredPortfolio" :key="item.title">
-          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition-all group">
-            <div class="relative h-60 bg-slate-100 flex items-center justify-center overflow-hidden p-6" :style="'background-color:' + item.bg">
+          <div class="bg-[#F8FAF9] rounded-3xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+            
+            <div class="relative h-64 overflow-hidden bg-slate-200">
+              <img :src="item.image" :alt="item.title" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" />
               
-              <!-- Realistic Graphic Representation -->
-              <div class="text-center space-y-2">
-                <div class="w-20 h-20 mx-auto rounded-full bg-white/90 shadow-md flex items-center justify-center p-3 text-[#094d45]">
-                  <div x-html="item.iconSvg"></div>
-                </div>
-                <div class="text-xs font-bold text-slate-800 bg-white/90 px-3 py-1 rounded-full shadow-xs inline-block" x-text="item.specs"></div>
+              <div class="absolute top-3 right-3 bg-[#094d45]/90 backdrop-blur-xs text-white text-[11px] font-black px-3 py-1 rounded-lg shadow font-tajawal">
+                تنفيذ ورشة يوزرسيف
               </div>
 
-              <!-- Brand watermark tag -->
-              <div class="absolute top-3 right-3 bg-[#094d45] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-xs">
-                تنفيذ يوزرسيف
+              <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-xs text-slate-900 text-[11px] font-black px-3 py-1 rounded-lg shadow">
+                <span x-text="item.specs"></span>
               </div>
             </div>
 
-            <div class="p-5">
+            <div class="p-6 space-y-3">
               <div class="flex items-center justify-between">
-                <h4 class="font-bold text-slate-900 font-tajawal text-base" x-text="item.title"></h4>
-                <span class="text-xs font-semibold text-[#E0A800]" x-text="item.categoryLabel"></span>
+                <h4 class="font-black text-slate-950 font-tajawal text-base" x-text="item.title"></h4>
+                <span class="text-xs font-bold text-[#E0A800]" x-text="item.categoryLabel"></span>
               </div>
-              <p class="text-xs text-slate-600 mt-2 font-medium leading-relaxed" x-text="item.client"></p>
+              <p class="text-xs text-slate-600 font-semibold leading-relaxed" x-text="item.client"></p>
               
-              <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-                <span class="text-[11px] font-bold text-slate-500">تقنية DTF حرارية</span>
-                <button @click="openCustomizer(item.categoryId)" class="text-xs font-bold text-[#094d45] hover:text-[#063731] flex items-center gap-1">
-                  <span>طلب تصميم مشابه</span>
-                  <svg class="w-3.5 h-3.5 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <div class="pt-3 border-t border-slate-200/80 flex items-center justify-between">
+                <span class="text-[11px] font-extrabold text-emerald-800">طباعة حرارية DTF كورية</span>
+                <button @click="openCustomizer(item.categoryId)" class="text-xs font-black text-[#094d45] hover:text-[#042823] flex items-center gap-1 cursor-pointer">
+                  <span>طلب تنفيذ مطابق</span>
+                  <svg class="w-3.5 h-3.5 rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                   </svg>
                 </button>
               </div>
             </div>
+
           </div>
         </template>
       </div>
@@ -600,77 +636,79 @@
     </div>
   </section>
 
-  <!-- Order Tracking System Section (تتبع طلبك) -->
-  <section id="tracking" class="py-16 bg-white border-t border-slate-200">
+  <!-- ======================================================== -->
+  <!-- ORDER TRACKING SYSTEM (تتبع طلبك الحقيقي) -->
+  <!-- ======================================================== -->
+  <section id="tracking" class="py-16 bg-[#F8FAF9]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center mb-8">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#094d45]/10 text-[#094d45] text-xs font-bold mb-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#094d45]/10 text-[#094d45] text-xs font-black mb-2">
+          <svg class="w-4 h-4 text-[#E0A800]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
-          <span>نظام التتبع المباشر</span>
+          <span>نظام التتبع الحي لورشة يوزرسيف</span>
         </div>
-        <h2 class="text-3xl font-extrabold text-slate-900 font-tajawal">تتبع حالة طلبك</h2>
-        <p class="text-sm text-slate-600 mt-2 font-medium">أدخل رقم الطلب الخاص بك لمتابعة مراحل الطباعة والتجهيز والشحن في ورشتنا</p>
+        <h2 class="text-3xl font-black text-slate-950 font-tajawal">تتبع خط سير طلبك</h2>
+        <p class="text-sm text-slate-600 mt-2 font-semibold">أدخل كود الطلب الخاص بك لمتابعة مراحل الطباعة وفحص الجودة والشحن حتى باب بيتك</p>
       </div>
 
       <!-- Tracking Search Box -->
-      <div class="bg-[#F9FAFB] p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+      <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xl space-y-6">
         
         <form @submit.prevent="trackOrder()" class="flex flex-col sm:flex-row gap-3">
           <div class="relative flex-1">
-            <input type="text" x-model="trackInput" placeholder="أدخل رقم الطلب مثل: YZR-4921" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3.5 text-slate-900 font-bold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#094d45] focus:border-transparent text-sm sm:text-base text-left dir-ltr" />
-            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-slate-400">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <input type="text" x-model="trackInput" placeholder="أدخل رقم الشحنة مثل: YZR-4921" class="w-full bg-slate-50 border border-slate-300 rounded-2xl px-5 py-4 text-slate-950 font-black placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#094d45] focus:bg-white text-sm sm:text-base text-left dir-ltr shadow-inner" />
+            <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-slate-400">
+              <svg class="w-5 h-5 text-[#094d45]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
               </svg>
             </div>
           </div>
 
-          <button type="submit" class="bg-[#094d45] hover:bg-[#063731] text-white font-bold px-7 py-3.5 rounded-xl shadow transition-all flex items-center justify-center gap-2 cursor-pointer">
-            <svg class="w-5 h-5 text-[#E0A800]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <button type="submit" class="bg-[#094d45] hover:bg-[#042823] text-white font-black px-8 py-4 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer">
+            <svg class="w-5 h-5 text-[#E0A800]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            <span>تتبع الطلب</span>
+            <span>استعلام التتبع</span>
           </button>
         </form>
 
-        <!-- Sample clickable order IDs -->
-        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-          <span class="font-semibold">أرقام طلبات تجريبية:</span>
-          <button type="button" @click="trackInput = 'YZR-4921'; trackOrder()" class="px-2.5 py-1 bg-white border border-slate-200 hover:border-[#094d45] hover:text-[#094d45] rounded-md font-mono font-bold transition-colors">YZR-4921</button>
-          <button type="button" @click="trackInput = 'YZR-8832'; trackOrder()" class="px-2.5 py-1 bg-white border border-slate-200 hover:border-[#094d45] hover:text-[#094d45] rounded-md font-mono font-bold transition-colors">YZR-8832</button>
-          <button type="button" @click="trackInput = 'YZR-1095'; trackOrder()" class="px-2.5 py-1 bg-white border border-slate-200 hover:border-[#094d45] hover:text-[#094d45] rounded-md font-mono font-bold transition-colors">YZR-1095</button>
+        <!-- Sample Quick Clickable Order IDs -->
+        <div class="flex flex-wrap items-center gap-2.5 text-xs text-slate-500 pt-1">
+          <span class="font-bold text-slate-700">شحنات نموذجية للاختبار:</span>
+          <button type="button" @click="trackInput = 'YZR-4921'; trackOrder()" class="px-3 py-1.5 bg-slate-50 border border-slate-200 hover:border-[#094d45] hover:text-[#094d45] rounded-lg font-mono font-bold transition-colors cursor-pointer">YZR-4921</button>
+          <button type="button" @click="trackInput = 'YZR-8832'; trackOrder()" class="px-3 py-1.5 bg-slate-50 border border-slate-200 hover:border-[#094d45] hover:text-[#094d45] rounded-lg font-mono font-bold transition-colors cursor-pointer">YZR-8832</button>
+          <button type="button" @click="trackInput = 'YZR-1095'; trackOrder()" class="px-3 py-1.5 bg-slate-50 border border-slate-200 hover:border-[#094d45] hover:text-[#094d45] rounded-lg font-mono font-bold transition-colors cursor-pointer">YZR-1095</button>
         </div>
 
         <!-- Tracking Results Card -->
         <div x-show="trackingResult !== null" x-cloak class="mt-6 pt-6 border-t border-slate-200 space-y-6">
           
-          <div class="bg-white p-5 rounded-xl border border-slate-200 flex flex-wrap items-center justify-between gap-4">
+          <div class="bg-gradient-to-r from-emerald-50/70 to-slate-50 p-5 rounded-2xl border border-emerald-900/10 flex flex-wrap items-center justify-between gap-4">
             <div>
               <div class="flex items-center gap-2">
-                <span class="text-xs font-semibold text-slate-500">رقم الطلب:</span>
-                <span class="text-base font-black text-[#094d45] font-mono" x-text="trackingResult?.orderId"></span>
+                <span class="text-xs font-bold text-slate-500">كود الطلب:</span>
+                <span class="text-lg font-black text-[#094d45] font-mono dir-ltr" x-text="trackingResult?.orderId"></span>
               </div>
-              <p class="text-xs font-semibold text-slate-700 mt-1" x-text="trackingResult?.productName"></p>
+              <p class="text-xs font-black text-slate-900 mt-1" x-text="trackingResult?.productName"></p>
             </div>
 
             <div class="flex items-center gap-3">
-              <span class="text-xs font-bold px-3 py-1.5 rounded-full bg-[#E0A800]/15 text-[#9e7500] border border-[#E0A800]/30" x-text="trackingResult?.statusTitle"></span>
+              <span class="text-xs font-black px-4 py-1.5 rounded-full bg-[#E0A800]/20 text-amber-950 border border-[#E0A800]/40 font-tajawal" x-text="trackingResult?.statusTitle"></span>
             </div>
           </div>
 
           <!-- Milestones Timeline -->
-          <div class="space-y-4">
+          <div class="space-y-4 pt-2">
             <template x-for="(step, idx) in trackingResult?.steps" :key="step.step">
               <div class="flex items-start gap-4 relative">
                 
-                <!-- Timeline Icon node -->
+                <!-- Node circle -->
                 <div class="flex flex-col items-center">
-                  <div :class="step.isCompleted ? 'bg-[#094d45] text-white' : 'bg-slate-200 text-slate-500'" class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs shrink-0 shadow-xs">
+                  <div :class="step.isCompleted ? 'bg-[#094d45] text-white shadow-md' : 'bg-slate-200 text-slate-500'" class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs shrink-0">
                     <template x-if="step.isCompleted">
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <svg class="w-4 h-4 text-[#E0A800]" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                     </template>
@@ -681,30 +719,30 @@
                   <div x-show="idx < 3" class="w-0.5 h-10 bg-slate-200 mt-1"></div>
                 </div>
 
-                <!-- Timeline Description -->
+                <!-- Step Description -->
                 <div class="flex-1 pb-4">
                   <div class="flex items-center justify-between">
-                    <h4 :class="step.isCompleted ? 'text-slate-900 font-bold' : 'text-slate-400 font-medium'" class="text-sm font-tajawal" x-text="step.title"></h4>
+                    <h4 :class="step.isCompleted ? 'text-slate-950 font-black' : 'text-slate-400 font-bold'" class="text-sm font-tajawal" x-text="step.title"></h4>
                     <span class="text-[11px] text-slate-400 font-semibold" x-text="step.date"></span>
                   </div>
-                  <p class="text-xs text-slate-500 mt-0.5 leading-relaxed" x-text="step.description"></p>
+                  <p class="text-xs text-slate-600 mt-1 font-medium leading-relaxed" x-text="step.description"></p>
                 </div>
 
               </div>
             </template>
           </div>
 
-          <!-- Shipping Note & Direct WhatsApp Assist -->
-          <div class="p-4 rounded-xl bg-[#094d45]/5 border border-[#094d45]/15 flex flex-wrap items-center justify-between gap-3 text-xs">
-            <div class="flex items-center gap-2 text-slate-700 font-medium">
-              <svg class="w-4 h-4 text-[#094d45]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <!-- Delivery Note & Direct WhatsApp Support -->
+          <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-900/15 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-2 text-slate-800 font-semibold">
+              <svg class="w-4 h-4 text-[#094d45]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span>التسليم المتوقع: <strong class="text-slate-900" x-text="trackingResult?.estimatedDelivery"></strong></span>
+              <span>موعد الوصول التقديري: <strong class="text-slate-950 font-black" x-text="trackingResult?.estimatedDelivery"></strong></span>
             </div>
             
-            <a :href="'https://wa.me/201116891025?text=' + encodeURIComponent('مرحباً يوزرسيف، أود الاستفسار عن حالة طلبي رقم: ' + (trackingResult?.orderId || ''))" target="_blank" rel="noopener noreferrer" class="text-[#094d45] hover:text-[#063731] font-bold flex items-center gap-1.5 underline">
-              <span>تحدث مع الدعم الفني للطلب</span>
+            <a :href="'https://wa.me/201116891025?text=' + encodeURIComponent('مرحباً يوزرسيف، أود الاستفسار عن تفاصيل شحنتي رقم: ' + (trackingResult?.orderId || ''))" target="_blank" rel="noopener noreferrer" class="text-[#094d45] hover:text-[#042823] font-black flex items-center gap-1.5 underline">
+              <span>تحدث مع مندوب متابعة الشحنة</span>
             </a>
           </div>
 
@@ -715,62 +753,64 @@
     </div>
   </section>
 
-  <!-- FAQ Section (الأسئلة الشائعة) -->
-  <section class="py-16 bg-[#F9FAFB] border-t border-slate-200">
+  <!-- ======================================================== -->
+  <!-- FAQ ACCORDION -->
+  <!-- ======================================================== -->
+  <section class="py-16 bg-white border-t border-slate-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center mb-10">
-        <span class="text-xs font-bold text-[#E0A800] uppercase tracking-wider">استفسارات شائعة</span>
-        <h2 class="text-3xl font-extrabold text-slate-900 font-tajawal mt-1">كل ما تحتاج معرفته عن الطباعة معنا</h2>
+        <span class="text-xs font-black text-[#E0A800] uppercase tracking-widest font-tajawal">إجابات استفساراتكم</span>
+        <h2 class="text-3xl font-black text-slate-950 font-tajawal mt-1">الأسئلة الأكثر تداولاً عن يوزرسيف</h2>
       </div>
 
-      <div class="space-y-3" x-data="{ openFaq: 1 }">
+      <div class="space-y-3.5" x-data="{ openFaq: 1 }">
         
-        <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs">
-          <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full p-5 text-right font-bold text-slate-900 flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors">
-            <span class="text-sm sm:text-base font-tajawal">ما هي خامات التيشيرتات والهوديز المستخدمة في يوزرسيف؟</span>
-            <svg :class="openFaq === 1 ? 'rotate-180 text-[#094d45]' : 'text-slate-400'" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <div class="bg-[#F8FAF9] rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+          <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full p-5 text-right font-black text-slate-900 flex items-center justify-between gap-4 hover:bg-slate-100/60 transition-colors cursor-pointer">
+            <span class="text-sm sm:text-base font-tajawal">ما هي خامات التيشيرتات والأوفر سايز المستخدمة في يوزرسيف؟</span>
+            <svg :class="openFaq === 1 ? 'rotate-180 text-[#094d45]' : 'text-slate-400'" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div x-show="openFaq === 1" x-cloak class="p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
-            نستخدم خامات قطن مصري 100% عالية الجودة معالجة ضد الانكماش (Single Jersey) للأوفر سايز والراوند، وخامات ميلتون قطن محمل مبطن بوبرة داخلية ناعمة للهوديز تمنحك الدفء والمظهر الأنيق.
+          <div x-show="openFaq === 1" x-cloak class="p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed font-semibold border-t border-slate-200/50">
+            نعتمد حصرياً على خامات قطن مصري 100% عالية الكثافة (سنجل جيرسي معالج 220-240 جرام) للأوفر سايز، ونسيج ميلتون ناعم مبطن بوبرة دافئة للهوديز الشتوية، لضمان ملمس ناعم يدوم لسنوات دون وبرة أو انكماش.
           </div>
         </div>
 
-        <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs">
-          <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full p-5 text-right font-bold text-slate-900 flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors">
-            <span class="text-sm sm:text-base font-tajawal">كيف أضمن ثبات ألوان الطباعة بعد الغسيل المتكرر؟</span>
-            <svg :class="openFaq === 2 ? 'rotate-180 text-[#094d45]' : 'text-slate-400'" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <div class="bg-[#F8FAF9] rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+          <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full p-5 text-right font-black text-slate-900 flex items-center justify-between gap-4 hover:bg-slate-100/60 transition-colors cursor-pointer">
+            <span class="text-sm sm:text-base font-tajawal">كيف نضمن ثبات الطباعة الحرارية مع الغسيل المتكرر؟</span>
+            <svg :class="openFaq === 2 ? 'rotate-180 text-[#094d45]' : 'text-slate-400'" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div x-show="openFaq === 2" x-cloak class="p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
-            نطبع باستخدام أحدث تقنيات الـ DTF والطباعة الحرارية بأحبار كورية وأوروبية أصلية يتم معالجتها تحت درجات حرارة وضغط دقيق، مما يجعلها مرنة ومقاومة للتشقق أو التلاشي لسنوات مع اتباع تعليمات الغسيل العادية.
+          <div x-show="openFaq === 2" x-cloak class="p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed font-semibold border-t border-slate-200/50">
+            نستخدم تقنية DTF الكورية الأصلية بمكابس حرارية أوتوماتيكية دقيقة، حيث تندمج الأحبار مع ألياف القماش بشكل مرن ومطاطي يقاوم التشققات والتساقط حتى بعد أكثر من 100 دورة غسيل.
           </div>
         </div>
 
-        <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs">
-          <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full p-5 text-right font-bold text-slate-900 flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors">
-            <span class="text-sm sm:text-base font-tajawal">هل يوجد حد أدنى للكميات المطلوبة؟</span>
-            <svg :class="openFaq === 3 ? 'rotate-180 text-[#094d45]' : 'text-slate-400'" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <div class="bg-[#F8FAF9] rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+          <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full p-5 text-right font-black text-slate-900 flex items-center justify-between gap-4 hover:bg-slate-100/60 transition-colors cursor-pointer">
+            <span class="text-sm sm:text-base font-tajawal">هل يمكنني طلب قطعة واحدة مخصصة باسمي أو تصميمي؟</span>
+            <svg :class="openFaq === 3 ? 'rotate-180 text-[#094d45]' : 'text-slate-400'" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div x-show="openFaq === 3" x-cloak class="p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
-            لا، يمكنك طلب قطعة واحدة مخصصة باسمك أو تصميمك الخاص بكل سهولة! كما نوفر عروض أسعار وخصومات مخصصة جداً للشركات والجامعات عند طلب كميات أو أوردرات الجملة.
+          <div x-show="openFaq === 3" x-cloak class="p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed font-semibold border-t border-slate-200/50">
+            نعم بالتأكيد! لا يوجد أي حد أدنى للكميات. يمكنك طلب تيشيرت واحد، أو هودي باسمك، أو هدية شخصية. وفي نفس الوقت نوفر أسعار جملة وخصومات خاصة للشركات والجامعات.
           </div>
         </div>
 
-        <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs">
-          <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full p-5 text-right font-bold text-slate-900 flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors">
-            <span class="text-sm sm:text-base font-tajawal">كم يستغرق الشحن والتسليم داخل مصر؟</span>
-            <svg :class="openFaq === 4 ? 'rotate-180 text-[#094d45]' : 'text-slate-400'" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <div class="bg-[#F8FAF9] rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+          <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full p-5 text-right font-black text-slate-900 flex items-center justify-between gap-4 hover:bg-slate-100/60 transition-colors cursor-pointer">
+            <span class="text-sm sm:text-base font-tajawal">ما هو نظام الدفع وحق المعاينة عند الاستلام؟</span>
+            <svg :class="openFaq === 4 ? 'rotate-180 text-[#094d45]' : 'text-slate-400'" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div x-show="openFaq === 4" x-cloak class="p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
-            تستغرق مرحلة الطباعة وفحص الجودة من 24 إلى 48 ساعة، ويصلك المندوب خلال يومين لمحافظات القاهرة الكبرى والإسكندرية، وخلال 3 إلى 4 أيام لباقي محافظات الصعيد والدلتا.
+          <div x-show="openFaq === 4" x-cloak class="p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed font-semibold border-t border-slate-200/50">
+            لك كامل الحق في فتح الشحنة ومعاينة جودة الخامة والمقاس وألوان الطباعة أمام مندوب الشحن قبل دفع أي مبلغ، كما نتيح خيارات الدفع عبر إنستاباي ومحافظ فودافون كاش.
           </div>
         </div>
 
@@ -779,61 +819,37 @@
     </div>
   </section>
 
-  <!-- CTA Banner Section -->
-  <section class="py-14 bg-[#094d45] text-white relative overflow-hidden">
-    <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-emerald-700/20 blur-3xl pointer-events-none"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-      
-      <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-[#E0A800] text-xs font-bold">
-        عروض خاصة للشركات والفعاليات
-      </span>
-
-      <h2 class="text-3xl sm:text-4xl font-black font-tajawal">جاهز لتحويل فكرتك إلى حقيقة مطبوعة؟</h2>
-      <p class="text-emerald-100 text-sm sm:text-base max-w-xl mx-auto font-medium leading-relaxed">
-        سواء كان تيشيرت واحد يعبر عنك أو مئات الهدايا لعلامتك التجارية، يوزرسيف يضمن لك الاحترافية من الألف إلى الياء.
-      </p>
-
-      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
-        <button @click="openCustomizer('tshirts')" class="bg-[#E0A800] hover:bg-[#C49300] text-slate-950 font-bold px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all text-sm sm:text-base">
-          ابدأ التخصيص الآن
-        </button>
-        <a href="https://wa.me/201116891025" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3.5 rounded-xl border border-white/20 transition-all text-sm sm:text-base flex items-center gap-2">
-          <span>تواصل واتساب مباشرة</span>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer id="contact" class="bg-[#063731] text-slate-300 pt-16 pb-12 border-t border-emerald-900/40">
+  <!-- ======================================================== -->
+  <!-- LUXURY FOOTER WITH CONTACT & VERIFIED LOGO -->
+  <!-- ======================================================== -->
+  <footer id="contact" class="bg-gradient-to-b from-[#042823] to-[#021815] text-slate-300 pt-16 pb-12 border-t border-emerald-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-emerald-900/60">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-emerald-900/40">
         
         <!-- Brand Info -->
         <div class="space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-xl bg-white p-1 flex items-center justify-center shadow-md">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 shrink-0 rounded-2xl bg-white p-1.5 flex items-center justify-center shadow-lg">
               <img src="/assets/aistudio/698128525_972394995530458_2269685097312552818_n_0a7c5350.jpg" alt="يوزرسيف" class="w-full h-full object-contain" />
             </div>
             <div>
               <span class="text-2xl font-black text-white font-tajawal">يوزرسيف</span>
-              <span class="block text-[11px] text-[#E0A800] font-semibold">خليك مختلف .. خليك يوزرسيف</span>
+              <span class="block text-[11px] text-[#E0A800] font-black font-tajawal">خليك مختلف .. خليك يوزرسيف</span>
             </div>
           </div>
-          <p class="text-xs text-emerald-100/80 leading-relaxed">
-            علامة تجارية مصرية رائدة متخصصة في خدمات الطباعة الحرارية عالية الجودة (DTF & Sublimation) وتطريز الملابس والهدايا الدعائية للشركات والأفراد.
+          <p class="text-xs text-emerald-100/75 leading-relaxed font-medium">
+            براند مصري متخصص في صناعة وطباعة الملابس الفاخرة والهدايا الدعائية وتطريز أزياء الشركات بأحدث تقنيات الطباعة الحرارية والمكابس الهيدروليكية.
           </p>
         </div>
 
         <!-- Quick Links -->
         <div class="space-y-3">
-          <h4 class="text-sm font-bold text-white font-tajawal border-b border-emerald-800 pb-2">روابط سريعة</h4>
-          <ul class="space-y-2 text-xs">
+          <h4 class="text-sm font-black text-white font-tajawal border-b border-emerald-800/80 pb-2">روابط سريعة</h4>
+          <ul class="space-y-2.5 text-xs font-semibold">
             <li><a href="#home" class="hover:text-white transition-colors">الصفحة الرئيسية</a></li>
-            <li><a href="#services" class="hover:text-white transition-colors">خدمات الطباعة والتخصيص</a></li>
-            <li><a href="#features" class="hover:text-white transition-colors">مميزات الجودة والخامات</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">منتجاتنا وخدماتنا</a></li>
+            <li><a href="#craft" class="hover:text-white transition-colors">معايير الجودة والخامات</a></li>
             <li><a href="#portfolio" class="hover:text-white transition-colors">معرض سوابق الأعمال</a></li>
             <li><a href="#tracking" class="hover:text-white transition-colors">تتبع حالة شحنتك</a></li>
           </ul>
@@ -841,20 +857,20 @@
 
         <!-- Printing Categories -->
         <div class="space-y-3">
-          <h4 class="text-sm font-bold text-white font-tajawal border-b border-emerald-800 pb-2">أقسام الطباعة</h4>
-          <ul class="space-y-2 text-xs">
-            <li><button @click="openCustomizer('tshirts')" class="hover:text-white transition-colors">طباعة التيشيرتات والأوفر سايز</button></li>
-            <li><button @click="openCustomizer('hoodies')" class="hover:text-white transition-colors">هوديز وسويتشرتات الشتاء</button></li>
-            <li><button @click="openCustomizer('mugs')" class="hover:text-white transition-colors">الأكواب والمجات الدعائية</button></li>
-            <li><button @click="openCustomizer('caps')" class="hover:text-white transition-colors">الكابات والاكسسوارات</button></li>
-            <li><button @click="openCustomizer('stickers')" class="hover:text-white transition-colors">الاستيكرات والملصقات المقاومة للماء</button></li>
+          <h4 class="text-sm font-black text-white font-tajawal border-b border-emerald-800/80 pb-2">أقسام الإنتاج</h4>
+          <ul class="space-y-2.5 text-xs font-semibold">
+            <li><button @click="openCustomizer('tshirts')" class="hover:text-white transition-colors cursor-pointer">طباعة التيشيرتات والأوفر سايز</button></li>
+            <li><button @click="openCustomizer('hoodies')" class="hover:text-white transition-colors cursor-pointer">هوديز وسويتشرتات الشتاء</button></li>
+            <li><button @click="openCustomizer('mugs')" class="hover:text-white transition-colors cursor-pointer">الأكواب والمجات الدعائية</button></li>
+            <li><button @click="openCustomizer('caps')" class="hover:text-white transition-colors cursor-pointer">الكابات والاكسسوارات الفاخرة</button></li>
+            <li><button @click="openCustomizer('cases')" class="hover:text-white transition-colors cursor-pointer">كفرات الموبايل والاستيكرات</button></li>
           </ul>
         </div>
 
         <!-- Official Contact Details -->
         <div class="space-y-3">
-          <h4 class="text-sm font-bold text-white font-tajawal border-b border-emerald-800 pb-2">تواصل معنا الآن</h4>
-          <ul class="space-y-3 text-xs">
+          <h4 class="text-sm font-black text-white font-tajawal border-b border-emerald-800/80 pb-2">تواصل معنا الآن</h4>
+          <ul class="space-y-3 text-xs font-bold">
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-[#E0A800] shrink-0" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
@@ -885,11 +901,11 @@
       </div>
 
       <!-- Copyright & Bottom Slogan -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300/70">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300/70 font-semibold">
         <div>
-          جميع الحقوق محفوظة © 2026 يوزرسيف (Youzersef). منصة الطباعة والتخصيص.
+          جميع الحقوق محفوظة © 2026 براند يوزرسيف (Youzersef). العلامة الرائدة للملابس والطباعة الفاخرة بمصر.
         </div>
-        <div class="font-bold text-[#E0A800]">
+        <div class="font-black text-[#E0A800] text-sm font-tajawal">
           خليك مختلف .. خليك يوزرسيف
         </div>
       </div>
@@ -898,32 +914,32 @@
   </footer>
 
   <!-- ======================================================== -->
-  <!-- THE "DESIGN LAB" / CUSTOMIZATION MODAL (CRUCIAL COMPONENT) -->
+  <!-- THE "DESIGN LAB" CUSTOMIZATION MODAL (CUSTOMINK STYLE) -->
   <!-- ======================================================== -->
   <div x-show="customizerOpen" x-cloak class="fixed inset-0 z-50 overflow-y-auto" role="dialog" aria-modal="true">
     
     <!-- Backdrop -->
-    <div x-show="customizerOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click="closeCustomizer()" class="fixed inset-0 bg-slate-900/75 backdrop-blur-xs transition-opacity"></div>
+    <div x-show="customizerOpen" x-transition.opacity @click="closeCustomizer()" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity"></div>
 
     <div class="min-h-screen px-4 text-center flex items-center justify-center py-6 sm:py-10">
       
-      <div x-show="customizerOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="inline-block w-full max-w-4xl bg-white rounded-3xl text-right overflow-hidden shadow-2xl transform transition-all border border-slate-200 my-4">
+      <div x-show="customizerOpen" x-transition.scale.95 class="inline-block w-full max-w-4xl bg-white rounded-3xl text-right overflow-hidden shadow-2xl transform transition-all border border-slate-200 my-4">
         
         <!-- Modal Top Bar -->
-        <div class="bg-[#094d45] text-white px-6 py-4 flex items-center justify-between border-b border-emerald-900">
+        <div class="bg-gradient-to-r from-[#031d1a] to-[#094d45] text-white px-6 py-4 flex items-center justify-between border-b border-emerald-950">
           <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center p-1.5 border border-white/20">
-              <svg class="w-5 h-5 text-[#E0A800]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center p-2 border border-white/20">
+              <svg class="w-5 h-5 text-[#E0A800]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
               </svg>
             </div>
             <div>
-              <h3 class="text-base sm:text-lg font-bold font-tajawal">مختبر التصميم والتخصيص | يوزرسيف</h3>
-              <span class="text-xs text-emerald-200 block" x-text="'تخصيص: ' + currentCategoryObj?.title"></span>
+              <h3 class="text-base sm:text-lg font-black font-tajawal">مختبر التصميم والتخصيص | يوزرسيف</h3>
+              <span class="text-xs text-emerald-200 font-semibold block" x-text="'تخصيص: ' + currentCategoryObj?.title"></span>
             </div>
           </div>
 
-          <button @click="closeCustomizer()" aria-label="إغلاق النافذة" class="text-white/80 hover:text-white p-2 rounded-lg hover:bg-white/10 transition-colors">
+          <button @click="closeCustomizer()" aria-label="إغلاق النافذة" class="text-white/80 hover:text-white p-2 rounded-xl hover:bg-white/10 transition-colors cursor-pointer">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -936,10 +952,10 @@
         <div x-show="customizerStep === 1" class="p-6 sm:p-8 space-y-6">
           
           <!-- Request-Readiness Assistant Banner -->
-          <div class="p-4 rounded-xl border transition-all" :class="isReady ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-amber-50 border-amber-200 text-amber-900'">
+          <div class="p-4 rounded-2xl border transition-all" :class="isReady ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'">
             <div class="flex items-center justify-between gap-2 mb-2">
-              <div class="flex items-center gap-2 font-bold text-xs sm:text-sm">
-                <svg class="w-4 h-4" :class="isReady ? 'text-emerald-600' : 'text-[#E0A800]'" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <div class="flex items-center gap-2 font-black text-xs sm:text-sm font-tajawal">
+                <svg class="w-4 h-4 text-[#094d45]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <span>مساعد جاهزية الطلب (Request-Readiness Assistant)</span>
@@ -948,111 +964,103 @@
             </div>
 
             <!-- Progress Bar -->
-            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-              <div class="h-full transition-all duration-300" :class="isReady ? 'bg-emerald-600' : 'bg-[#E0A800]'" :style="'width:' + readinessScore + '%'"></div>
+            <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+              <div class="h-full transition-all duration-300" :class="isReady ? 'bg-[#094d45]' : 'bg-[#E0A800]'" :style="'width:' + readinessScore + '%'"></div>
             </div>
 
-            <p class="text-[11px] mt-2 font-medium" x-text="isReady ? 'طلبك مكتمل ومستعد للمراجعة والطباعة بدون أي نواقص!' : 'يرجى اختيار المقاس واللون ورفع التصميم أو كتابة النص المطلوب لإكمال الطلب.'"></p>
+            <p class="text-[11px] mt-2 font-bold" x-text="isReady ? 'طلبك مكتمل ومستعد للمراجعة والطباعة بدون أي نواقص!' : 'يرجى اختيار المقاس واللون ورفع التصميم أو كتابة النص المطلوب لإكمال الطلب.'"></p>
           </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            <!-- Left Side: Live Product Mockup Canvas (Sticky in desktop) -->
-            <div class="lg:col-span-5 bg-slate-50 rounded-2xl p-5 border border-slate-200 text-center space-y-4">
+            <!-- Left Side: Real Product Photo Mockup Canvas -->
+            <div class="lg:col-span-5 bg-slate-50 rounded-3xl p-5 border border-slate-200 text-center space-y-4">
               
-              <div class="flex items-center justify-between text-xs font-bold text-slate-500">
-                <span>معاينة حية فورية</span>
-                <div class="flex items-center gap-1 bg-white p-0.5 rounded-md border border-slate-200">
-                  <button type="button" @click="printSide = 'front'" :class="printSide === 'front' ? 'bg-[#094d45] text-white' : 'text-slate-600'" class="px-2 py-0.5 rounded text-[11px] font-bold transition-colors">صدر أمامي</button>
-                  <button type="button" @click="printSide = 'back'" :class="printSide === 'back' ? 'bg-[#094d45] text-white' : 'text-slate-600'" class="px-2 py-0.5 rounded text-[11px] font-bold transition-colors">ظهر كامل</button>
+              <div class="flex items-center justify-between text-xs font-black text-slate-700">
+                <span>معاينة حية واقعية</span>
+                <div class="flex items-center gap-1 bg-white p-0.5 rounded-lg border border-slate-200">
+                  <button type="button" @click="printSide = 'front'" :class="printSide === 'front' ? 'bg-[#094d45] text-white' : 'text-slate-600'" class="px-2.5 py-1 rounded-md text-[11px] font-bold transition-colors cursor-pointer">صدر أمامي</button>
+                  <button type="button" @click="printSide = 'back'" :class="printSide === 'back' ? 'bg-[#094d45] text-white' : 'text-slate-600'" class="px-2.5 py-1 rounded-md text-[11px] font-bold transition-colors cursor-pointer">ظهر كامل</button>
                 </div>
               </div>
 
-              <!-- Product Preview Canvas with Active Selected Color -->
-              <div class="relative mx-auto w-60 h-60 sm:w-64 sm:h-64 rounded-xl flex items-center justify-center p-3 border border-dashed border-slate-300 shadow-inner overflow-hidden transition-colors" :style="'background-color:' + (selectedColorObj?.bg || '#f8fafc')">
+              <!-- Product Photo Display Box with Active Real Image & Imprint -->
+              <div class="relative mx-auto w-full aspect-square rounded-2xl overflow-hidden border border-slate-200 shadow-md">
                 
-                <!-- Product SVG (T-Shirt or Mug/Cap) -->
-                <svg class="w-full h-full drop-shadow-sm transition-all duration-200" viewBox="0 0 240 240" fill="none">
-                  <!-- Shirt Body -->
-                  <path d="M70,30 L95,50 C105,55 135,55 145,50 L170,30 L220,70 L195,100 L175,85 L175,215 C175,220 170,225 165,225 L75,225 C70,225 65,220 65,215 L65,85 L45,100 L20,70 L70,30 Z" :fill="selectedColorObj?.value || '#094d45'" stroke="#334155" stroke-width="2.5" stroke-linejoin="round"/>
-                  <!-- Collar -->
-                  <path d="M95,50 C105,65 135,65 145,50" fill="none" stroke="#334155" stroke-width="2.5"/>
-                  <!-- Print Box Area -->
-                  <rect x="88" y="80" width="64" height="74" rx="4" fill="none" stroke="#94A3B8" stroke-dasharray="3 3" stroke-width="1.2"/>
-                </svg>
+                <img :src="currentCategoryObj?.image" :alt="currentCategoryObj?.title" class="w-full h-full object-cover" />
 
-                <!-- Live Imprint on the Product -->
-                <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none mt-2 p-4">
-                  <!-- If user uploaded a custom file -->
+                <!-- Design Imprint Overlay on Real Product Photo -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none p-4">
+                  <!-- Uploaded File Preview -->
                   <template x-if="uploadedFilePreview">
-                    <img :src="uploadedFilePreview" alt="تصميمك المرفوع" class="w-16 h-16 object-contain rounded shadow-sm border border-white/60 bg-white/20 p-0.5 mb-1" />
+                    <img :src="uploadedFilePreview" alt="تصميمك المرفوع" class="w-20 h-20 object-contain rounded-xl shadow-lg border-2 border-white/80 bg-white/40 p-1 mb-1.5" />
                   </template>
 
-                  <!-- Default brand logo imprint if no file uploaded -->
+                  <!-- Default Logo if no file -->
                   <template x-if="!uploadedFilePreview">
-                    <div class="w-12 h-12 rounded-full bg-white/90 p-1 shadow-xs flex items-center justify-center mb-1">
+                    <div class="w-16 h-16 rounded-full bg-[#094d45]/90 p-1.5 shadow-xl flex items-center justify-center mb-1 border-2 border-[#E0A800]">
                       <img src="/assets/aistudio/698128525_972394995530458_2269685097312552818_n_0a7c5350.jpg" alt="لوجو يوزرسيف" class="w-full h-full object-contain rounded-full" />
                     </div>
                   </template>
 
                   <!-- User Custom Text Preview -->
                   <template x-if="customText">
-                    <span class="text-[11px] font-black px-2 py-0.5 rounded shadow-xs max-w-[120px] truncate" :class="selectedColorObj?.isDark ? 'bg-white text-slate-900' : 'bg-[#094d45] text-white'" x-text="customText"></span>
+                    <span class="text-xs font-black px-3 py-1 rounded-md shadow-md bg-slate-950/90 text-[#E0A800] border border-[#E0A800]/50 max-w-[140px] truncate font-tajawal" x-text="customText"></span>
                   </template>
                 </div>
 
-                <!-- Back indicator tag -->
-                <span x-show="printSide === 'back'" class="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[10px] px-2 py-0.5 rounded font-bold">الظهر</span>
+                <!-- Print Side Indicator -->
+                <span class="absolute bottom-2.5 left-2.5 bg-slate-950/80 backdrop-blur-xs text-white text-[10px] px-2.5 py-1 rounded-md font-bold" x-text="printSide === 'front' ? 'الواجهة الأمامية' : 'الظهر الكامل'"></span>
               </div>
 
-              <!-- Product Specs Quick Pill -->
-              <div class="text-xs text-slate-600 font-semibold flex items-center justify-between px-2">
-                <span>المقاس: <strong class="text-slate-900" x-text="selectedSize || 'لم يحدد'"></strong></span>
-                <span>اللون: <strong class="text-slate-900" x-text="selectedColorObj?.name || 'لم يحدد'"></strong></span>
+              <!-- Specs Quick Summary -->
+              <div class="text-xs text-slate-700 font-bold flex items-center justify-between px-2 bg-white py-2 rounded-xl border border-slate-200">
+                <span>المقاس: <strong class="text-[#094d45]" x-text="selectedSize || 'لم يحدد'"></strong></span>
+                <span>اللون: <strong class="text-[#094d45]" x-text="selectedColor || 'لم يحدد'"></strong></span>
               </div>
 
             </div>
 
             <!-- Right Side: Customization Controls -->
-            <div class="lg:col-span-7 space-y-6">
+            <div class="lg:col-span-7 space-y-5">
               
               <!-- 1. Size Selection Chips -->
-              <div :class="{'shake-error': shakeSize}" class="p-4 rounded-xl border border-slate-200 bg-white transition-all space-y-2.5">
+              <div :class="{'shake-error': shakeSize}" class="p-4 rounded-2xl border border-slate-200 bg-white transition-all space-y-2.5">
                 <div class="flex items-center justify-between">
-                  <label class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                  <label class="text-xs font-black text-slate-900 flex items-center gap-1.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-[#094d45]"></span>
                     <span>1. اختر المقاس المناسب:</span>
-                    <span class="text-rose-500 font-bold">*</span>
+                    <span class="text-rose-500 font-black">*</span>
                   </label>
-                  <span class="text-[11px] text-slate-400">جدول المقاسات معتمد</span>
+                  <span class="text-[11px] text-slate-400 font-bold">جدول معتمد مريح</span>
                 </div>
 
                 <div class="flex flex-wrap gap-2">
                   <template x-for="sz in availableSizes" :key="sz">
-                    <button type="button" @click="selectedSize = sz; validateSpecs()" :class="selectedSize === sz ? 'bg-[#094d45] text-white border-[#094d45] shadow-xs' : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-300'" class="px-4 py-2 rounded-lg text-xs font-black border transition-all cursor-pointer" x-text="sz"></button>
+                    <button type="button" @click="selectedSize = sz; validateSpecs()" :class="selectedSize === sz ? 'bg-[#094d45] text-white border-[#094d45] shadow-md scale-105' : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-300'" class="px-4 py-2 rounded-xl text-xs font-black border transition-all cursor-pointer" x-text="sz"></button>
                   </template>
                 </div>
 
                 <!-- Error helper text -->
-                <div x-show="validationErrors.size" x-cloak class="text-xs text-rose-600 font-bold flex items-center gap-1 pt-1">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <div x-show="validationErrors.size" x-cloak class="text-xs text-rose-600 font-black flex items-center gap-1 pt-1">
+                  <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                   </svg>
-                  <span>يرجى اختيار المقاس المطلوب للمنتج للمتابعة</span>
+                  <span>يرجى اختيار المقاس المطلوب للمنتج قبل المتابعة</span>
                 </div>
               </div>
 
-              <!-- 2. Color Swatches -->
-              <div :class="{'shake-error': shakeColor}" class="p-4 rounded-xl border border-slate-200 bg-white transition-all space-y-2.5">
-                <label class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+              <!-- 2. Color Selection -->
+              <div :class="{'shake-error': shakeColor}" class="p-4 rounded-2xl border border-slate-200 bg-white transition-all space-y-2.5">
+                <label class="text-xs font-black text-slate-900 flex items-center gap-1.5">
                   <span class="w-1.5 h-1.5 rounded-full bg-[#094d45]"></span>
-                  <span>2. اختر اللون:</span>
-                  <span class="text-rose-500 font-bold">*</span>
+                  <span>2. اختر لون الخامة:</span>
+                  <span class="text-rose-500 font-black">*</span>
                 </label>
 
                 <div class="flex flex-wrap items-center gap-3">
                   <template x-for="c in availableColors" :key="c.name">
-                    <button type="button" @click="selectedColor = c.name; validateSpecs()" :class="selectedColor === c.name ? 'ring-2 ring-offset-2 ring-[#094d45] scale-105' : 'hover:scale-105'" class="w-9 h-9 rounded-full border border-slate-300 shadow-xs relative transition-transform cursor-pointer" :style="'background-color:' + c.value" :title="c.name">
+                    <button type="button" @click="selectedColor = c.name; validateSpecs()" :class="selectedColor === c.name ? 'ring-2 ring-offset-2 ring-[#094d45] scale-110 shadow-md' : 'hover:scale-105'" class="w-9 h-9 rounded-full border border-slate-300 relative transition-transform cursor-pointer shadow-xs" :style="'background-color:' + c.value" :title="c.name">
                       <span x-show="selectedColor === c.name" class="absolute inset-0 flex items-center justify-center">
                         <svg class="w-4 h-4" :class="c.isDark ? 'text-white' : 'text-slate-900'" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
@@ -1062,60 +1070,58 @@
                   </template>
                 </div>
 
-                <div class="text-xs font-bold text-[#094d45]" x-text="'اللون المختار: ' + (selectedColorObj?.name || 'لم يتم التحديد بعد')"></div>
+                <div class="text-xs font-black text-[#094d45]" x-text="'اللون المحدد: ' + (selectedColor || 'يرجى الاختيار')"></div>
 
                 <!-- Error helper text -->
-                <div x-show="validationErrors.color" x-cloak class="text-xs text-rose-600 font-bold flex items-center gap-1 pt-1">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <div x-show="validationErrors.color" x-cloak class="text-xs text-rose-600 font-black flex items-center gap-1 pt-1">
+                  <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                   </svg>
-                  <span>يرجى تحديد اللون المفضل لتنفيذ طلبك</span>
+                  <span>يرجى اختيار اللون المطلوب لتنفيذ المنتج</span>
                 </div>
               </div>
 
-              <!-- 3. Upload Custom Design (Drag & Drop / File Input) -->
-              <div :class="{'shake-error': shakeArtwork}" class="p-4 rounded-xl border border-slate-200 bg-white transition-all space-y-2.5">
+              <!-- 3. Upload Artwork / Design -->
+              <div :class="{'shake-error': shakeArtwork}" class="p-4 rounded-2xl border border-slate-200 bg-white transition-all space-y-2.5">
                 <div class="flex items-center justify-between">
-                  <label class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                  <label class="text-xs font-black text-slate-900 flex items-center gap-1.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-[#094d45]"></span>
                     <span>3. ارفع ملف التصميم الخاص بك:</span>
-                    <span class="text-xs text-slate-400 font-normal">(أو اكتب نصاً بالأسفل)</span>
                   </label>
-                  <span class="text-[11px] text-slate-400">PNG, JPG, PDF, AI</span>
+                  <span class="text-[11px] text-slate-400 font-bold">PNG, JPG, PDF, AI</span>
                 </div>
 
-                <!-- Dropzone Box -->
-                <div class="relative border-2 border-dashed rounded-xl p-4 text-center transition-colors hover:border-[#094d45]" :class="uploadedFileName ? 'bg-emerald-50/50 border-emerald-300' : 'bg-slate-50 border-slate-300'">
+                <div class="relative border-2 border-dashed rounded-2xl p-4 text-center transition-colors hover:border-[#094d45]" :class="uploadedFileName ? 'bg-emerald-50/60 border-emerald-400' : 'bg-slate-50 border-slate-300'">
                   <input type="file" @change="handleFileUpload($event)" accept="image/*,.pdf,.ai,.psd" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
                   
                   <template x-if="!uploadedFileName">
-                    <div class="space-y-1 pointer-events-none">
-                      <div class="w-9 h-9 mx-auto rounded-full bg-slate-200 text-slate-500 flex items-center justify-center">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <div class="space-y-1.5 pointer-events-none">
+                      <div class="w-10 h-10 mx-auto rounded-xl bg-slate-200 text-slate-600 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-[#094d45]" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                         </svg>
                       </div>
-                      <p class="text-xs font-bold text-slate-700">اضغط لرفع ملف التصميم أو اسحبه إلى هنا</p>
-                      <p class="text-[11px] text-slate-400">أقصى حجم للملف 25 ميجابايت بدقة عالية</p>
+                      <p class="text-xs font-black text-slate-800">اضغط لرفع ملف التصميم أو اسحبه إلى هنا</p>
+                      <p class="text-[11px] text-slate-500 font-medium">يقوم مهندس الطباعة بضبط وتجهيز الملف مجاناً</p>
                     </div>
                   </template>
 
                   <template x-if="uploadedFileName">
                     <div class="flex items-center justify-between gap-3">
-                      <div class="flex items-center gap-2 overflow-hidden text-right">
-                        <div class="w-8 h-8 rounded bg-emerald-600 text-white flex items-center justify-center shrink-0">
-                          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <div class="flex items-center gap-2.5 overflow-hidden text-right">
+                        <div class="w-9 h-9 rounded-xl bg-[#094d45] text-[#E0A800] flex items-center justify-center shrink-0 shadow">
+                          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                           </svg>
                         </div>
                         <div class="truncate">
-                          <span class="text-xs font-bold text-slate-900 block truncate" x-text="uploadedFileName"></span>
-                          <span class="text-[10px] text-emerald-700 font-semibold">تم تجهيز الملف للمعاينة والطباعة</span>
+                          <span class="text-xs font-black text-slate-900 block truncate" x-text="uploadedFileName"></span>
+                          <span class="text-[10px] text-emerald-800 font-bold">تم تجهيز التصميم للمعاينة</span>
                         </div>
                       </div>
 
-                      <button type="button" @click.stop="removeUploadedFile()" class="p-1.5 text-slate-400 hover:text-rose-600 rounded-lg transition-colors">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <button type="button" @click.stop="removeUploadedFile()" class="p-2 text-slate-400 hover:text-rose-600 rounded-lg transition-colors cursor-pointer">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                         </svg>
                       </button>
@@ -1123,41 +1129,41 @@
                   </template>
                 </div>
 
-                <!-- 4. Optional Custom Text Input -->
+                <!-- Custom Text Input -->
                 <div class="pt-2">
-                  <label class="text-[11px] font-bold text-slate-700 block mb-1">أو اكتب عبارة / اسم تريد طباعته:</label>
-                  <input type="text" x-model="customText" @input="validateSpecs()" placeholder="مثال: يوزرسيف 2026 أو اسمك بالخط العربي" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs font-bold focus:outline-none focus:ring-1 focus:ring-[#094d45] focus:bg-white text-slate-800" />
+                  <label class="text-[11px] font-black text-slate-800 block mb-1">أو اكتب الاسم أو العبارة المراد طباعتها:</label>
+                  <input type="text" x-model="customText" @input="validateSpecs()" placeholder="مثال: يوزرسيف 2026 أو اسمك الشخصي بالعربي" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs font-black focus:outline-none focus:ring-2 focus:ring-[#094d45] focus:bg-white text-slate-900" />
                 </div>
 
-                <!-- Error helper text when neither file nor text is provided -->
-                <div x-show="validationErrors.artwork" x-cloak class="text-xs text-rose-600 font-bold flex items-center gap-1 pt-1">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <!-- Error helper text -->
+                <div x-show="validationErrors.artwork" x-cloak class="text-xs text-rose-600 font-black flex items-center gap-1 pt-1">
+                  <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                   </svg>
                   <span>يرجى رفع ملف التصميم أو كتابة العبارة المطلوبة للطباعة</span>
                 </div>
               </div>
 
-              <!-- Quantity Selector & Price Summary -->
-              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-wrap items-center justify-between gap-4">
+              <!-- Quantity & Total Price -->
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-wrap items-center justify-between gap-4">
                 <div class="flex items-center gap-3">
-                  <span class="text-xs font-bold text-slate-800">الكمية المطلوبة:</span>
-                  <div class="flex items-center bg-white border border-slate-200 rounded-lg overflow-hidden shadow-xs">
-                    <button type="button" @click="quantity = Math.max(1, quantity - 1)" class="px-2.5 py-1 text-slate-600 hover:bg-slate-100 font-bold text-sm">-</button>
-                    <span class="px-3 py-1 font-bold text-xs text-slate-900 font-mono" x-text="quantity"></span>
-                    <button type="button" @click="quantity = quantity + 1" class="px-2.5 py-1 text-slate-600 hover:bg-slate-100 font-bold text-sm">+</button>
+                  <span class="text-xs font-black text-slate-800">الكمية:</span>
+                  <div class="flex items-center bg-white border border-slate-200 rounded-xl overflow-hidden shadow-xs">
+                    <button type="button" @click="quantity = Math.max(1, quantity - 1)" class="px-3 py-1.5 text-slate-600 hover:bg-slate-100 font-black text-base cursor-pointer">-</button>
+                    <span class="px-3.5 py-1.5 font-black text-xs text-slate-950 font-mono" x-text="quantity"></span>
+                    <button type="button" @click="quantity = quantity + 1" class="px-3 py-1.5 text-slate-600 hover:bg-slate-100 font-black text-base cursor-pointer">+</button>
                   </div>
                 </div>
 
                 <div>
-                  <span class="text-[11px] text-slate-500 block">الإجمالي التقديري:</span>
-                  <span class="text-base font-black text-[#094d45]" x-text="calculatedTotalPrice + ' ج.م'"></span>
+                  <span class="text-[11px] text-slate-500 font-bold block">الإجمالي التقديري:</span>
+                  <span class="text-lg font-black text-[#094d45]" x-text="calculatedTotalPrice + ' ج.م'"></span>
                 </div>
               </div>
 
-              <!-- Action to Proceed -->
+              <!-- Proceed Button -->
               <div class="pt-2">
-                <button type="button" @click="proceedToReview()" class="w-full bg-[#094d45] hover:bg-[#063731] text-white py-3.5 rounded-xl font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer">
+                <button type="button" @click="proceedToReview()" class="w-full bg-[#094d45] hover:bg-[#042823] text-white py-4 rounded-2xl font-black text-sm shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer">
                   <span>مراجعة وتأكيد تفاصيل الطلب</span>
                   <svg class="w-4 h-4 rotate-180 text-[#E0A800]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
@@ -1177,9 +1183,9 @@
         <div x-show="customizerStep === 2" x-cloak class="p-6 sm:p-8 space-y-6">
           
           <div class="border-b border-slate-200 pb-3 flex items-center justify-between">
-            <h4 class="text-lg font-bold text-slate-900 font-tajawal">مراجعة بيانات الطلب والعنوان</h4>
-            <button type="button" @click="customizerStep = 1" class="text-xs text-[#094d45] font-bold hover:underline flex items-center gap-1">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <h4 class="text-lg font-black text-slate-950 font-tajawal">مراجعة بيانات الطلب وعنوان التوصيل</h4>
+            <button type="button" @click="customizerStep = 1" class="text-xs text-[#094d45] font-black hover:underline flex items-center gap-1 cursor-pointer">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
               </svg>
               <span>تعديل المواصفات والتصميم</span>
@@ -1190,54 +1196,54 @@
           <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-3">
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
               <div class="bg-white p-3 rounded-xl border border-slate-200">
-                <span class="text-slate-400 block mb-0.5">المنتج:</span>
-                <strong class="text-slate-900" x-text="currentCategoryObj?.title"></strong>
+                <span class="text-slate-400 block mb-0.5 font-semibold">المنتج:</span>
+                <strong class="text-slate-950 font-black" x-text="currentCategoryObj?.title"></strong>
               </div>
               <div class="bg-white p-3 rounded-xl border border-slate-200">
-                <span class="text-slate-400 block mb-0.5">المقاس:</span>
-                <strong class="text-slate-900" x-text="selectedSize"></strong>
+                <span class="text-slate-400 block mb-0.5 font-semibold">المقاس:</span>
+                <strong class="text-slate-950 font-black" x-text="selectedSize"></strong>
               </div>
               <div class="bg-white p-3 rounded-xl border border-slate-200">
-                <span class="text-slate-400 block mb-0.5">اللون:</span>
-                <strong class="text-slate-900" x-text="selectedColorObj?.name"></strong>
+                <span class="text-slate-400 block mb-0.5 font-semibold">اللون:</span>
+                <strong class="text-slate-950 font-black" x-text="selectedColor"></strong>
               </div>
               <div class="bg-white p-3 rounded-xl border border-slate-200">
-                <span class="text-slate-400 block mb-0.5">الكمية:</span>
-                <strong class="text-slate-900" x-text="quantity + ' قطعة'"></strong>
+                <span class="text-slate-400 block mb-0.5 font-semibold">الكمية:</span>
+                <strong class="text-slate-950 font-black" x-text="quantity + ' قطعة'"></strong>
               </div>
             </div>
 
-            <div class="bg-white p-3.5 rounded-xl border border-slate-200 text-xs flex flex-wrap items-center justify-between gap-2">
+            <div class="bg-white p-4 rounded-xl border border-slate-200 text-xs flex flex-wrap items-center justify-between gap-2">
               <div>
-                <span class="text-slate-400">التصميم / النص المطبوع: </span>
-                <strong class="text-[#094d45]" x-text="uploadedFileName ? ('ملف: ' + uploadedFileName) : ('نص: ' + customText)"></strong>
+                <span class="text-slate-400 font-semibold">التصميم المعتمد: </span>
+                <strong class="text-[#094d45] font-black" x-text="uploadedFileName ? ('ملف: ' + uploadedFileName) : ('نص: ' + customText)"></strong>
               </div>
               <div>
-                <span class="text-slate-400">الإجمالي النهائي: </span>
-                <strong class="text-base font-black text-[#094d45]" x-text="calculatedTotalPrice + ' ج.م'"></strong>
+                <span class="text-slate-400 font-semibold">الإجمالي شامل الضريبة: </span>
+                <strong class="text-lg font-black text-[#094d45]" x-text="calculatedTotalPrice + ' ج.م'"></strong>
               </div>
             </div>
           </div>
 
-          <!-- Customer Checkout Form -->
+          <!-- Checkout Form -->
           <form @submit.prevent="submitOrder()" class="space-y-4">
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="text-xs font-bold text-slate-800 block mb-1">الاسم بالكامل: <span class="text-rose-500">*</span></label>
-                <input type="text" x-model="customerName" required placeholder="أدخل اسمك ثلاثي" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#094d45]" />
+                <label class="text-xs font-black text-slate-900 block mb-1">الاسم بالكامل: <span class="text-rose-500">*</span></label>
+                <input type="text" x-model="customerName" required placeholder="أدخل اسمك ثلاثي" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#094d45]" />
               </div>
 
               <div>
-                <label class="text-xs font-bold text-slate-800 block mb-1">رقم الهاتف / الواتساب: <span class="text-rose-500">*</span></label>
-                <input type="tel" x-model="customerPhone" required placeholder="01xxxxxxxxx" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#094d45] text-left dir-ltr" />
+                <label class="text-xs font-black text-slate-900 block mb-1">رقم الهاتف / الواتساب: <span class="text-rose-500">*</span></label>
+                <input type="tel" x-model="customerPhone" required placeholder="01xxxxxxxxx" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#094d45] text-left dir-ltr" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="text-xs font-bold text-slate-800 block mb-1">المحافظة: <span class="text-rose-500">*</span></label>
-                <select x-model="customerCity" required class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#094d45]">
+                <label class="text-xs font-black text-slate-900 block mb-1">المحافظة: <span class="text-rose-500">*</span></label>
+                <select x-model="customerCity" required class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#094d45]">
                   <option value="القاهرة">القاهرة</option>
                   <option value="الجيزة">الجيزة</option>
                   <option value="الإسكندرية">الإسكندرية</option>
@@ -1265,38 +1271,38 @@
               </div>
 
               <div>
-                <label class="text-xs font-bold text-slate-800 block mb-1">العنوان بالتفصيل: <span class="text-rose-500">*</span></label>
-                <input type="text" x-model="customerAddress" required placeholder="المنطقة، الشارع، رقم العمارة والشقة" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#094d45]" />
+                <label class="text-xs font-black text-slate-900 block mb-1">العنوان بالتفصيل: <span class="text-rose-500">*</span></label>
+                <input type="text" x-model="customerAddress" required placeholder="المنطقة، الشارع، رقم العمارة والشقة" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#094d45]" />
               </div>
             </div>
 
             <div>
-              <label class="text-xs font-bold text-slate-800 block mb-1">ملاحظات إضافية للمصمم أو المندوب (اختياري):</label>
-              <textarea x-model="orderNotes" rows="2" placeholder="أي تفاصيل تخص موضع الطباعة أو مواعيد الاستلام المناسبة لك..." class="w-full bg-white border border-slate-300 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#094d45]"></textarea>
+              <label class="text-xs font-black text-slate-900 block mb-1">ملاحظات خاصة للمصمم أو المندوب (اختياري):</label>
+              <textarea x-model="orderNotes" rows="2" placeholder="أي تفاصيل تخص موضع الطباعة أو مواعيد الاستلام المناسبة لك..." class="w-full bg-white border border-slate-300 rounded-xl p-3 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#094d45]"></textarea>
             </div>
 
             <!-- Payment Method Radio -->
-            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-              <span class="text-xs font-bold text-slate-800 block mb-2">طريقة الدفع:</span>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+              <span class="text-xs font-black text-slate-900 block mb-2">طريقة الدفع:</span>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                <label class="flex items-center gap-2 bg-white p-2.5 rounded-lg border border-slate-200 cursor-pointer">
+                <label class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-200 cursor-pointer">
                   <input type="radio" name="payment" value="cod" checked class="text-[#094d45] focus:ring-[#094d45]" />
-                  <span class="font-bold text-slate-800">الدفع عند الاستلام بعد المعاينة</span>
+                  <span class="font-black text-slate-900">الدفع عند الاستلام بعد المعاينة</span>
                 </label>
-                <label class="flex items-center gap-2 bg-white p-2.5 rounded-lg border border-slate-200 cursor-pointer">
+                <label class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-200 cursor-pointer">
                   <input type="radio" name="payment" value="instapay" class="text-[#094d45] focus:ring-[#094d45]" />
-                  <span class="font-bold text-slate-800">فودافون كاش / إنستاباي InstaPay</span>
+                  <span class="font-black text-slate-900">إنستاباي InstaPay / فودافون كاش</span>
                 </label>
               </div>
             </div>
 
             <!-- Final Submit Button -->
             <div class="pt-3">
-              <button type="submit" class="w-full bg-[#E0A800] hover:bg-[#C49300] text-slate-950 py-4 rounded-xl font-extrabold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer">
+              <button type="submit" class="w-full bg-[#E0A800] hover:bg-[#C49300] text-slate-950 py-4 rounded-2xl font-black text-base shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 cursor-pointer glow-gold">
                 <svg class="w-5 h-5 text-slate-950" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                 </svg>
-                <span>تأكيد الطلب وإرساله إلى يوزرسيف</span>
+                <span>تأكيد الطلب وإرساله إلى ورشة يوزرسيف</span>
               </button>
             </div>
 
@@ -1312,10 +1318,10 @@
   <!-- SUCCESS CONFIRMATION MODAL WITH RANDOM ORDER ID -->
   <!-- ======================================================== -->
   <div x-show="successModalOpen" x-cloak class="fixed inset-0 z-50 overflow-y-auto" role="dialog" aria-modal="true">
-    <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-xs transition-opacity"></div>
+    <div class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity"></div>
     <div class="min-h-screen px-4 text-center flex items-center justify-center py-6">
       
-      <div x-show="successModalOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" class="inline-block w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 text-center shadow-2xl transform transition-all border border-slate-200 space-y-5 my-4">
+      <div x-show="successModalOpen" x-transition.scale.95 class="inline-block w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 text-center shadow-2xl transform transition-all border border-slate-200 space-y-5 my-4">
         
         <!-- Animated Success Checkmark -->
         <div class="w-16 h-16 mx-auto rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shadow-inner">
@@ -1325,41 +1331,41 @@
         </div>
 
         <div>
-          <span class="text-xs font-bold text-[#E0A800] uppercase tracking-wider">تم استلام طلبك بنجاح!</span>
-          <h3 class="text-2xl font-black text-slate-900 font-tajawal mt-1">شكراً لثقتك في يوزرسيف</h3>
-          <p class="text-xs sm:text-sm text-slate-600 mt-2 font-medium leading-relaxed">
-            قام فريقنا بحفظ بيانات التخصيص والمقاسات، وجاري مراجعة ملف التصميم لبدء الطباعة الحرارية فوراً.
+          <span class="text-xs font-black text-[#E0A800] uppercase tracking-widest font-tajawal">تم استلام طلبك بنجاح!</span>
+          <h3 class="text-2xl font-black text-slate-950 font-tajawal mt-1">شكراً لاختيارك يوزرسيف</h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2 font-semibold leading-relaxed">
+            قام فريقنا بحفظ مواصفات التخصيص، وجاري تجهيز ملفات الطباعة لبدء التنفيذ فوراً في الورشة.
           </p>
         </div>
 
         <!-- Order ID Display Card -->
-        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2">
-          <span class="text-xs text-slate-500 font-bold block">رقم طلبك الخاص (احفظه لتتبع الشحنة):</span>
+        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-2">
+          <span class="text-xs text-slate-500 font-bold block">رقم طلبك المعتمد لتتبع الشحنة:</span>
           <div class="flex items-center justify-center gap-3">
             <span class="text-2xl font-black text-[#094d45] tracking-widest font-mono dir-ltr select-all" x-text="confirmedOrderId"></span>
-            <button type="button" @click="copyOrderId()" class="p-2 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 transition-colors" title="نسخ رقم الطلب">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <button type="button" @click="copyOrderId()" class="p-2.5 rounded-xl bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 transition-colors cursor-pointer" title="نسخ رقم الطلب">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
             </button>
           </div>
-          <span x-show="copied" x-cloak class="text-[11px] text-emerald-600 font-bold block">تم نسخ رقم الطلب إلى الحافظة بنجاح!</span>
+          <span x-show="copied" x-cloak class="text-[11px] text-emerald-700 font-black block">تم نسخ رقم الطلب إلى الحافظة بنجاح!</span>
         </div>
 
         <!-- Action Buttons -->
         <div class="space-y-2.5 pt-2">
-          <a :href="whatsappOrderUrl" target="_blank" rel="noopener noreferrer" class="w-full bg-[#094d45] hover:bg-[#063731] text-white py-3.5 rounded-xl font-bold text-sm shadow transition-all flex items-center justify-center gap-2">
+          <a :href="whatsappOrderUrl" target="_blank" rel="noopener noreferrer" class="w-full bg-[#094d45] hover:bg-[#042823] text-white py-3.5 rounded-2xl font-black text-sm shadow transition-all flex items-center justify-center gap-2">
             <svg class="w-4 h-4 text-[#E0A800]" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
             </svg>
             <span>إرسال تفاصيل الطلب عبر واتساب للتأكيد السريع</span>
           </a>
 
-          <button type="button" @click="goToTrackingFromSuccess()" class="w-full bg-[#E0A800] hover:bg-[#C49300] text-slate-950 py-3 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <button type="button" @click="goToTrackingFromSuccess()" class="w-full bg-[#E0A800] hover:bg-[#C49300] text-slate-950 py-3.5 rounded-2xl font-black text-sm transition-all flex items-center justify-center gap-2 cursor-pointer">
             <span>تتبع هذا الطلب الآن في الموقع</span>
           </button>
 
-          <button type="button" @click="successModalOpen = false" class="text-xs text-slate-500 hover:text-slate-700 font-semibold py-1">
+          <button type="button" @click="successModalOpen = false" class="text-xs text-slate-500 hover:text-slate-800 font-bold py-1 cursor-pointer">
             إغلاق ومتابعة التصفح
           </button>
         </div>
@@ -1375,22 +1381,15 @@
       return {
         mobileMenuOpen: false,
 
-        // Hero interactive state
-        heroColors: [
-          { name: 'أخضر يوزرسيف الملكي', value: '#094d45', bg: '#eef6f5', isDark: true },
-          { name: 'أسود فخم', value: '#111827', bg: '#f3f4f6', isDark: true },
-          { name: 'أبيض ناصع', value: '#FFFFFF', bg: '#f8fafc', isDark: false },
-          { name: 'كحلي داكن', value: '#1E293B', bg: '#f1f5f9', isDark: true },
-          { name: 'رمادي ميلانج', value: '#94A3B8', bg: '#f8fafc', isDark: false }
-        ],
-        heroColor: { name: 'أخضر يوزرسيف الملكي', value: '#094d45', bg: '#eef6f5', isDark: true },
+        // Real Studio Photos
+        heroActivePhoto: '/assets/images/hero_tshirt.jpg',
 
         // Customizer Modal State
         customizerOpen: false,
-        customizerStep: 1, // 1: specs & design, 2: checkout & address
+        customizerStep: 1,
         selectedCategory: 'tshirts',
-        selectedSize: '',
-        selectedColor: '',
+        selectedSize: 'L',
+        selectedColor: 'أخضر يوزرسيف الملكي',
         printSide: 'front',
         customText: '',
         uploadedFileName: '',
@@ -1428,156 +1427,119 @@
         // Portfolio tab state
         portfolioFilter: 'all',
 
-        // Services Catalog matching brochure
+        // Services Catalog with REAL STUDIO PHOTOGRAPHY
         services: [
           {
             id: 'tshirts',
             title: 'التيشيرتات والأوفر سايز',
             badge: 'الأكثر طلباً',
-            description: 'طباعة تيشيرتات بأعلى جودة خامات قطن مصري 100%، قصات أوفر سايز وراوند معالجة ضد الانكماش.',
-            tags: ['قطن 100%', 'أوفر سايز', 'DTF حراري'],
+            material: 'خامة قطن مصري 100% سنجل جيرسي 240g',
+            description: 'قصات أوفر سايز وراوند معالجة ومريحة لا تنكمش مع ألوان ثابتة وأحبار DTF كورية.',
+            tags: ['قطن 100%', 'أوفر سايز تريند', 'طباعة DTF'],
             startingPrice: 280,
-            iconSvg: `<svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 4l4 4-2 2-2-1v11a1 1 0 01-1 1H9a1 1 0 01-1-1V9L6 10 4 8l4-4 2 2h4l2-2z"/></svg>`
+            image: '/assets/images/hero_tshirt.jpg'
           },
           {
             id: 'hoodies',
-            title: 'الهوديز والسويتشرت',
-            badge: 'تشكيلة شتوية',
-            description: 'خامات ميلتون قطن مميزة وتشطيبات احترافية بوبرة داخلية دافئة وتطريز أو طباعة تدوم.',
-            tags: ['ميلتون ثقيل', 'جيوب كانغارو', 'ألوان ثابتة'],
+            title: 'الهوديز والسويتشرت الشتوي',
+            badge: 'تشكيلة شتوية فاخرة',
+            material: 'ميلتون قطن محمل 380g بوبرة ناعمة',
+            description: 'خامات ميلتون ثقيل مع كابيشو دبل وجيوب كانغارو وتشطيب خياطة دبل ستيتش.',
+            tags: ['ميلتون ثقيل', 'دفء فائق', 'ألوان ثابتة'],
             startingPrice: 520,
-            iconSvg: `<svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3a4 4 0 00-4 4v1H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V10a2 2 0 00-2-2h-2V7a4 4 0 00-4-4z"/></svg>`
+            image: '/assets/images/hoodie.jpg'
           },
           {
-            id: 'heatpress',
-            title: 'الطباعة الحرارية DTF',
-            badge: 'أحدث تكنولوجيا',
-            description: 'طباعة حرارية ديجيتال فائقة الدقة بتفاصيل ناعمة وثبات لا يتأثر بالغسيل بأحدث الطابعات.',
-            tags: ['ألوان ناصعة', 'مرونة عالية', 'مقاوم للتشقق'],
-            startingPrice: 120,
-            iconSvg: `<svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>`
+            id: 'mugs',
+            title: 'الأكواب والمجات الدعائية',
+            badge: 'هدايا وشركات',
+            material: 'سيراميك حراري نخب أول ومطرات ستانلس',
+            description: 'أكواب سيراميك كورية ومطرات استانلس معزولة حرارياً لحفظ المشروبات لساعات.',
+            tags: ['سيراميك حراري', 'مطرات مفرغة', 'طباعة مقاومة للجلي'],
+            startingPrice: 110,
+            image: '/assets/images/mugs.jpg'
           },
           {
             id: 'caps',
             title: 'الكابات والاكسسوارات',
-            badge: 'تصميم شخصي',
-            description: 'كابات بيسبول وشابو وتطريز ثلاثي الأبعاد أو طباعة تعكس أسلوبك الفريد وهويتك.',
-            tags: ['تطريز 3D', 'كابات قطن', 'مقاس قابل للتعديل'],
+            badge: 'تطريز 3D فاخر',
+            material: 'قطن تويل عالي الكثافة مع بكلة معدنية',
+            description: 'كابات بيسبول وشابو بتطريز كمبيوتر بارز ثلاثي الأبعاد أو طباعة فليكس حراري.',
+            tags: ['تطريز 3D', 'قطن تويل', 'مقاس قابل للتعديل'],
             startingPrice: 160,
-            iconSvg: `<svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-3.866 0-7 2.239-7 5v3h14v-3c0-2.761-3.134-5-7-5zm0 0V4m-7 9h14"/></svg>`
-          },
-          {
-            id: 'mugs',
-            title: 'الهدايا الدعائية والمجات',
-            badge: 'هدايا وشركات',
-            description: 'أكواب سيراميك وسحرية، مطرات استانلس حافظة للحرارة، وهدايا ترويجية متكاملة للشركات.',
-            tags: ['سيراميك حراري', 'مطرات مفرغة', 'طباعة ليزر'],
-            startingPrice: 110,
-            iconSvg: `<svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 8h2a3 3 0 013 3v2a3 3 0 01-3 3h-2M3 8h16v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/></svg>`
-          },
-          {
-            id: 'stickers',
-            title: 'الاستيكرات والملصقات',
-            badge: 'فينيل متين',
-            description: 'استيكرات فينيل وقص إلكتروني (Die-cut) مقاومة للماء والخدش مناسبة للابتوب والموبايل والسيارات.',
-            tags: ['ضد الماء', 'قص مخصص', 'ألوان ثابتة'],
-            startingPrice: 50,
-            iconSvg: `<svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>`
+            image: '/assets/images/caps.jpg'
           },
           {
             id: 'cases',
-            title: 'كفرات الموبايل',
-            badge: 'حماية وأناقة',
-            description: 'كفرات سيليكون ومقاومة للصدمات بأعلى جودة طباعة وألوان براقة لجميع إصدارات أبل وسامسونج.',
-            tags: ['مضاد للصدمات', 'حواف حماية', 'كل الموديلات'],
-            startingPrice: 180,
-            iconSvg: `<svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>`
-          },
-          {
-            id: 'custom',
-            title: 'تصميمات خاصة وتنفيذ أفكار',
-            badge: 'استشارات مجانية',
-            description: 'أي فكرة تدور في بالك سنساعدك في رسمها وتحويلها إلى منتج ملموس بجودة تليق بك.',
-            tags: ['دعم مخصص', 'باقات شركات', 'معاينة عينات'],
-            startingPrice: 200,
-            iconSvg: `<svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>`
+            title: 'كفرات الموبايل والاستيكرات',
+            badge: 'فينيل متين ضد الماء',
+            material: 'سيليكون مقاوم للصدمات وفينيل لامع',
+            description: 'كفرات هواتف آيفون وسامسونج ممتصة للصدمات مع استيكرات فينيل مقصوصة ليزر.',
+            tags: ['مضاد للصدمات', 'ضد الماء والخدش', 'قص ليزر دقيق'],
+            startingPrice: 120,
+            image: '/assets/images/cases_stickers.jpg'
           }
         ],
 
         // Available Sizes
         availableSizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
 
-        // Available Colors in Design Lab
+        // Available Colors
         availableColors: [
-          { name: 'أخضر يوزرسيف الملكي', value: '#094d45', bg: '#eef6f5', isDark: true },
-          { name: 'أسود ملكي', value: '#111827', bg: '#f3f4f6', isDark: true },
-          { name: 'أبيض ناصع', value: '#FFFFFF', bg: '#f8fafc', isDark: false },
-          { name: 'كحلي غامق', value: '#1E293B', bg: '#f1f5f9', isDark: true },
-          { name: 'رمادي ميلانج', value: '#94A3B8', bg: '#f8fafc', isDark: false },
-          { name: 'عنابي (نبيتي)', value: '#7F1D1D', bg: '#fef2f2', isDark: true }
+          { name: 'أخضر يوزرسيف الملكي', value: '#094d45', isDark: true },
+          { name: 'أسود فخم', value: '#111827', isDark: true },
+          { name: 'أبيض ناصع', value: '#FFFFFF', isDark: false },
+          { name: 'كحلي داكن', value: '#1E293B', isDark: true },
+          { name: 'رمادي ميلانج', value: '#94A3B8', isDark: false },
+          { name: 'عنابي (نبيتي)', value: '#7F1D1D', isDark: true }
         ],
 
-        // Portfolio Showcase Items
+        // Portfolio Showcase with REAL STUDIO PHOTOGRAPHY
         portfolioItems: [
           {
-            title: 'تيشيرت أوفر سايز بطباعة DTF كورية',
+            title: 'تيشيرت أوفر سايز زيتي ملكي',
             category: 'wearable',
             categoryId: 'tshirts',
             categoryLabel: 'تيشيرتات',
-            specs: 'قطن مصري 100% - مقاس L',
-            client: 'تنفيذ لصالح فريق مطوري برمجيات في المعادي',
-            bg: '#eef6f5',
-            iconSvg: `<svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 4l4 4-2 2-2-1v11a1 1 0 01-1 1H9a1 1 0 01-1-1V9L6 10 4 8l4-4 2 2h4l2-2z"/></svg>`
+            specs: 'قطن مصري 100% سنجل جيرسي',
+            client: 'تنفيذ لبراند ملابس شبابي بالمعادي',
+            image: '/assets/images/hero_tshirt.jpg'
           },
           {
             title: 'هودي شتوي ميلتون تقيل مبطن',
             category: 'wearable',
             categoryId: 'hoodies',
             categoryLabel: 'هوديز وسويتشرت',
-            specs: 'ميلتون 380 جرام - لون أسود',
-            client: 'طلب خاص لدفعة تخرج كلية الهندسة جامعة القاهرة',
-            bg: '#f3f4f6',
-            iconSvg: `<svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3a4 4 0 00-4 4v1H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V10a2 2 0 00-2-2h-2V7a4 4 0 00-4-4z"/></svg>`
+            specs: 'ميلتون 380g قطن محمل',
+            client: 'دفعة تخرج كلية الهندسة جامعة القاهرة',
+            image: '/assets/images/hoodie.jpg'
           },
           {
-            title: 'أكواب سيراميك حرارية بهوية موحدة',
+            title: 'أكواب سيراميك ومطرات استانلس',
             category: 'promotional',
             categoryId: 'mugs',
             categoryLabel: 'مجات وهدايا',
-            specs: 'سيراميك أبيض - ألوان عالية التباين',
-            client: 'باقة هدايا للموظفين الجدد بشركة تسويق بالتجمع',
-            bg: '#fef3c7',
-            iconSvg: `<svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 8h2a3 3 0 013 3v2a3 3 0 01-3 3h-2M3 8h16v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/></svg>`
+            specs: 'سيراميك أبيض معزول حرارياً',
+            client: 'باقة هدايا شركة برمجيات بالتجمع الخامس',
+            image: '/assets/images/mugs.jpg'
           },
           {
             title: 'كابات بيسبول بتطريز بارز 3D',
             category: 'accessories',
             categoryId: 'caps',
             categoryLabel: 'كابات واكسسوارات',
-            specs: 'خامة قطن ممتازة - تطريز كمبيوتر',
-            client: 'تنفيذ لفعاليات بطولة رياضية في الإسكندرية',
-            bg: '#e0f2fe',
-            iconSvg: `<svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-3.866 0-7 2.239-7 5v3h14v-3c0-2.761-3.134-5-7-5zm0 0V4m-7 9h14"/></svg>`
+            specs: 'قطن تويل فاخر - تطريز كمبيوتر',
+            client: 'تنفيذ لبطولة بادل وأكاديمية رياضية',
+            image: '/assets/images/caps.jpg'
           },
           {
-            title: 'مجموعة استيكرات فينيل مقصوصة ليزر',
-            category: 'accessories',
-            categoryId: 'stickers',
-            categoryLabel: 'استيكرات',
-            specs: 'فينيل لامع مقاوم للماء والشمس',
-            client: 'حزمة ترويجية لأكاديمية تدريب ناشئة في الشيخ زايد',
-            bg: '#f1f5f9',
-            iconSvg: `<svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>`
-          },
-          {
-            title: 'كفرات موبايل بتصميمات هندسية فريدة',
+            title: 'كفرات موبايل وحزمة استيكرات فينيل',
             category: 'accessories',
             categoryId: 'cases',
-            categoryLabel: 'كفرات موبايل',
-            specs: 'سيليكون مقاوم للصدمات - حماية الكاميرا',
-            client: 'تشكيلة حصرية تم تصميمها لمعرض فنون تشكيلية',
-            bg: '#f0fdf4',
-            iconSvg: `<svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>`
+            categoryLabel: 'كفرات واستيكرات',
+            specs: 'سيليكون مقاوم للصدمات - فينيل ضد الماء',
+            client: 'معرض فنون وتصميم تشكيلي بالزمالك',
+            image: '/assets/images/cases_stickers.jpg'
           }
         ],
 
@@ -1590,12 +1552,8 @@
           return this.services.find(s => s.id === this.selectedCategory) || this.services[0];
         },
 
-        get selectedColorObj() {
-          return this.availableColors.find(c => c.name === this.selectedColor) || this.availableColors[0];
-        },
-
         get calculatedTotalPrice() {
-          const base = this.currentCategoryObj?.startingPrice || 250;
+          const base = this.currentCategoryObj?.startingPrice || 280;
           return base * this.quantity;
         },
 
@@ -1608,7 +1566,7 @@
         },
 
         get readinessScore() {
-          let score = 25; // Category selected
+          let score = 25;
           const isWearable = ['tshirts', 'hoodies', 'caps'].includes(this.selectedCategory);
           if (!isWearable || this.selectedSize) score += 25;
           if (this.selectedColor) score += 25;
@@ -1617,7 +1575,7 @@
         },
 
         get whatsappOrderUrl() {
-          const text = `مرحباً يوزرسيف، لقد قمت بتأكيد طلبي من خلال الموقع:\n- رقم الطلب: ${this.confirmedOrderId}\n- المنتج: ${this.currentCategoryObj?.title}\n- المقاس: ${this.selectedSize}\n- اللون: ${this.selectedColor}\n- الكمية: ${this.quantity}\n- الاسم: ${this.customerName}\n- الهاتف: ${this.customerPhone}\n- العنوان: ${this.customerCity} - ${this.customerAddress}\nخليك مختلف .. خليك يوزرسيف!`;
+          const text = `مرحباً براند يوزرسيف، لقد قمت بتأكيد طلبي من خلال الموقع:\n- رقم الطلب: ${this.confirmedOrderId}\n- المنتج: ${this.currentCategoryObj?.title}\n- المقاس: ${this.selectedSize}\n- اللون: ${this.selectedColor}\n- الكمية: ${this.quantity}\n- الاسم: ${this.customerName}\n- الهاتف: ${this.customerPhone}\n- العنوان: ${this.customerCity} - ${this.customerAddress}\nخليك مختلف .. خليك يوزرسيف!`;
           return 'https://wa.me/201116891025?text=' + encodeURIComponent(text);
         },
 
@@ -1626,11 +1584,9 @@
           this.customizerStep = 1;
           this.customizerOpen = true;
           this.validationErrors = { size: false, color: false, artwork: false };
-          // Default to first color if not set
           if (!this.selectedColor) {
             this.selectedColor = this.availableColors[0].name;
           }
-          // Default size for wearables if not set
           if (!this.selectedSize && ['tshirts', 'hoodies'].includes(this.selectedCategory)) {
             this.selectedSize = 'L';
           }
@@ -1649,7 +1605,6 @@
           }
         },
 
-        // Request-Readiness Assistant validation trigger
         proceedToReview() {
           const isWearable = ['tshirts', 'hoodies', 'caps'].includes(this.selectedCategory);
           let hasError = false;
@@ -1712,11 +1667,9 @@
         },
 
         submitOrder() {
-          // Generate realistic random Order ID (YZR-XXXX)
           const randomNum = Math.floor(1000 + Math.random() * 9000);
           this.confirmedOrderId = 'YZR-' + randomNum;
 
-          // Save order into localStorage for tracking simulation
           const newOrder = {
             orderId: this.confirmedOrderId,
             productName: this.currentCategoryObj?.title + ' (' + this.selectedSize + ' - ' + this.selectedColor + ')',
@@ -1735,7 +1688,6 @@
             localStorage.setItem('yzr_last_order', JSON.stringify(newOrder));
           } catch(e) {}
 
-          // Close design modal and open success modal
           this.customizerOpen = false;
           this.successModalOpen = true;
           this.copied = false;
@@ -1766,7 +1718,6 @@
             return;
           }
 
-          // Check if it matches last saved order
           let saved = null;
           try {
             const raw = localStorage.getItem('yzr_last_order');
@@ -1778,10 +1729,9 @@
             return;
           }
 
-          // Deterministic simulation based on ID digits
           const digits = input.replace(/\D/g, '');
           const sum = digits.split('').reduce((acc, d) => acc + parseInt(d, 10), 0);
-          const stage = (sum % 4) + 1; // 1 to 4
+          const stage = (sum % 4) + 1;
 
           const stages = [
             { title: 'تم استلام وتأكيد الطلب', desc: 'تم استلام طلبك ومراجعة تفاصيل التخصيص والمقاسات بنجاح في نظامنا.' },
