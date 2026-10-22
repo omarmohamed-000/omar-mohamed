@@ -1,0 +1,6 @@
+{
+  "name": "يوزرسيف | Youzersef - منصة الطباعة والتخصيص",
+  "description": "منصة يوزرسيف لخدمات الطباعة الحرارية وتخصيص التيشيرتات والهوديز والهدايا الدعائية في مصر. خليك مختلف .. خليك يوزرسيف.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
